@@ -29,7 +29,7 @@ public:
     std::string getName() const;
 
     // Abstract Methods
-    virtual bool hit(const ray &beamlet) = 0;
+    virtual double hit(const ray &beamlet) = 0;
     virtual void interact_ray(ray &beamlet) = 0;
     virtual void interact_wavefront(WaveFront &A) = 0;
 };
