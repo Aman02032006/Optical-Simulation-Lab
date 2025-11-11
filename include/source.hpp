@@ -29,6 +29,14 @@ public:
     {
         E.initialize();
     }
+
+    vec3 getPosition() {
+        return position ;
+    }
+
+    vec3 getOrientation() {
+        return orientation ;
+    }
 };
 
 #endif

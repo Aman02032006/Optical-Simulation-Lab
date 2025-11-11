@@ -1,8 +1,9 @@
+#include "optical_element.hpp"
 #include "ray.hpp"
+#include "source.hpp"
+#include "utils.hpp"
 #include "vec3.hpp"
 #include "wavefront.hpp"
-#include "optical_element.hpp"
-#include "utils.hpp"
 #include <vector>
 #include <set>
 
@@ -25,11 +26,13 @@ int main()
 {
     std::vector<OpticalElement *> ElementsList;
 
+    Source source(point3(0,0,0), vec3(0,0,1), FieldType::GAUSSIAN, 0.0, 0.0) ;
+
     std::set<Path> PossiblePaths;
 
     for (int i = 1; i <= 100; i++)
     {
-        ray beam(point3(0, 0, 0), vec3(0, 0, 1));
+        ray beam(source.getPosition(), source.getOrientation());
         std::set<OpticalElement *> interacted_with;
         Path CurrentPath;
 
@@ -61,5 +64,10 @@ int main()
         }
 
         PossiblePaths.insert(CurrentPath);
+    }
+
+    for (auto Path : PossiblePaths) {
+        auto E_field = source.E ;
+        
     }
 }
