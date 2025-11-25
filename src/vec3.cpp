@@ -43,6 +43,14 @@ vec3 &vec3::operator/=(double t)
     return *this *= 1 / t;
 }
 
+vec3 &vec3::operator=(const vec3 &v)
+{
+    e[0] = v.x();
+    e[1] = v.y();
+    e[2] = v.z();
+    return *this;
+}
+
 double vec3::length() const
 {
     return sqrt(length_squared());

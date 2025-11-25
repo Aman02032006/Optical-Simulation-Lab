@@ -4,12 +4,12 @@
 ray::ray(point3 position, vec3 direction)
     : position{position}, direction{direction}, alive{true} {}
 
-vec3 ray::pos()
+vec3 ray::pos() const
 {
     return position;
 }
 
-vec3 ray::dir()
+vec3 ray::dir() const
 {
     return direction;
 }

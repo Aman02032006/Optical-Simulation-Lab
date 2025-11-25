@@ -1,8 +1,0 @@
-﻿  Building Custom Rule D:/Academics/Projects/QISS/extern/Matplotplusplus/source/3rd_party/CMakeLists.txt
-  algebra.cpp
-  fruchterman_reingold.cpp
-  kamada_kawai.cpp
-  layout.cpp
-  nodesoup.cpp
-  Generating Code...
-  nodesoup.vcxproj -> D:\Academics\Projects\QISS\build\extern\Matplotplusplus\source\3rd_party\Release\nodesoup.lib

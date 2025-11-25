@@ -2,7 +2,22 @@
 
 // Constructor
 OpticalElement::OpticalElement(const vec3 &pos, const vec3 &orient, const std::string &n)
-    : position(pos), orientation(unit_vector(orient)), name(n) {}
+    : position(pos), orientation(unit_vector(orient)), name(n)
+{
+    w = orientation ;
+
+    auto tmp = (abs(w.x()) < 0.9) ? vec3(1.0, 0.0, 0.0) : vec3(0.0, 1.0, 0.0) ;
+
+    u = unit_vector(cross(w, tmp)) ;
+    v = unit_vector(cross(w, u)) ;
+
+    if (abs(w.x()) > 0.9)
+    {
+        tmp = u ;
+        u = v ;
+        v = tmp ;
+    }
+}
 
 // Getters
 vec3 OpticalElement::getPosition() const

@@ -15,8 +15,8 @@ private:
 public:
     ray(point3 position, vec3 direction);
 
-    vec3 pos(); // returns the position of the photon
-    vec3 dir(); // returns the direction of the photon
+    vec3 pos() const; // returns the position of the photon
+    vec3 dir() const; // returns the direction of the photon
 
     void propagate(double distance);                   // Propagates the photon by distance
     void reflect(point3 normal);                       // Reflects the photon about the normal
