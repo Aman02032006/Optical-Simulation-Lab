@@ -73,6 +73,13 @@ set(MATPLOTPP_BUILD_EXAMPLES OFF CACHE BOOL "Build Matplot++ examples" FORCE)
 set(MATPLOTPP_BUILD_TESTS OFF CACHE BOOL "Build Matplot++ tests" FORCE)
 add_subdirectory(extern/Matplotplusplus)
 
+# Disable warning C4834 (discarding return value) for the Matplot library
+if(MSVC)
+    target_compile_options(matplot PUBLIC /wd4834)
+    # Also optionally disable "Treat Warnings as Errors" if it persists
+    target_compile_options(matplot PUBLIC /W0) 
+endif()
+
 # --- FFTW ---
 set(FFTW_LIB_DIR "${FFTW_ROOT}/lib")
 set(FFTW_LIB "${FFTW_LIB_DIR}/fftw3.lib")
@@ -96,13 +103,16 @@ target_link_libraries(QISS PRIVATE
     OpenGL::GL
 
     # FFTW (for physics)
-    fftw3
+    ${FFTW_LIB}
 )
 
 # -----------------------------
 # 6. Optional compile definitions
 # -----------------------------
-target_compile_definitions(QISS PRIVATE _CRT_SECURE_NO_WARNINGS)
+target_compile_definitions(QISS PRIVATE 
+    _CRT_SECURE_NO_WARNINGS
+    "ImDrawIdx=unsigned int"
+)
 
 # -----------------------------
 # 7. Post-Build Commands

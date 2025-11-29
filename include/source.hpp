@@ -23,9 +23,9 @@ private:
 
 public:
     WaveFront E;
-    Source(vec3 position, vec3 orientation, FieldType mode, double psi, double delta, double wavelength = 633e-9, double w0 = 0.001, int l = 0, int p = 0)
+    Source(vec3 position, vec3 orientation, FieldType mode, double psi, double delta, double wavelength = 633e-9, double w0 = 1e-3, int l = 0, int p = 0)
         : position(position), orientation(orientation), mode(mode), psi(psi), delta(delta), wavelength(wavelength), w0(w0), l(l), p(p),
-        E(0.05, 5e-6, ray(position, orientation), wavelength, mode, psi, delta, w0, l, p)
+        E(ray(position, orientation), wavelength, mode, psi, delta, w0, l, p)
     {
         E.initialize();
     }

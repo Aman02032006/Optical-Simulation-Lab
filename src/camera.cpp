@@ -1,6 +1,6 @@
 #include "camera.hpp"
 
-Camera::Camera(const vec3 &position, const vec3 &orientation, std::string name, double size) : OpticalElement(position, orientation, name), size(size) {}
+Camera::Camera(const vec3 &position, const vec3 &orientation, std::string name, double size) : OpticalElement(position, orientation, name), size(size), sensed_wavefront(ray(position, orientation), 633e-9, FieldType::PLANE, 0.0, 0.0, 1e-3) {}
 
 double Camera::hit(const ray &beamlet)
 {
@@ -32,27 +32,12 @@ void Camera::interact_wavefront(WaveFront &A)
     A.scale(0.0);
 }
 
-void Camera::output()
+WaveFront &Camera::getSensedWaveFront()
 {
-    using namespace matplot;
+    return sensed_wavefront;
+}
 
-    auto intensity = sensed_wavefront.Intensity();
-    auto phase = sensed_wavefront.Phase();
-
-    auto fig = figure(true);
-    fig->name(getName() + " Output");
-
-    auto ax1 = subplot(1, 2, 0);
-    imagesc(ax1, intensity);
-    title(ax1, "Intensity Map");
-    colorbar(ax1);
-    axis(ax1, equal);
-
-    auto ax2 = subplot(1, 2, 1);
-    imagesc(ax2, phase);
-    title(ax2, "Phase Map");
-    colorbar(ax2);
-    axis(ax2, equal);
-
-    show();
+void Camera::reset()
+{
+    sensed_wavefront.scale(0.0);
 }

@@ -4,7 +4,7 @@
 #include <cmath>
 
 // Constructor
-WaveFront::WaveFront(double size, double pixel_size, ray normal, double wavelength, FieldType source, double psi, double delta, double w0, int l, int p)
+WaveFront::WaveFront(ray normal, double wavelength, FieldType source, double psi, double delta, double w0, int l, int p, double size, double pixel_size)
     : size(size), pixel_size(pixel_size), normal(normal), wavelength(wavelength), source(source), w0(w0), l(l), p(p), psi(psi), delta(delta)
 {
     N = (int)(size / pixel_size);
@@ -13,7 +13,7 @@ WaveFront::WaveFront(double size, double pixel_size, ray normal, double waveleng
     get_LocalFrame();
 }
 
-// Getters
+// Getters 
 double WaveFront::getSize() { return size; }
 double WaveFront::getPixelSize() { return pixel_size; }
 double WaveFront::getWavelength() { return wavelength; }
@@ -243,7 +243,7 @@ void WaveFront::initialize()
 // Operators
 WaveFront WaveFront::operator+(const WaveFront &other)
 {
-    WaveFront C(this->getSize(), this->getPixelSize(), this->getNormal(), this->getWavelength(), this->source, this->psi, this->delta, this->w0, this->l, this->p);
+    WaveFront C(this->getNormal(), this->getWavelength(), this->source, this->psi, this->delta, this->w0, this->l, this->p, this->getSize(), this->getPixelSize());
     for (int i = 0; i < C.N; i++)
         for (int j = 0; j < C.N; j++)
         {
@@ -255,7 +255,7 @@ WaveFront WaveFront::operator+(const WaveFront &other)
 
 WaveFront WaveFront::operator-(const WaveFront &other)
 {
-    WaveFront C(this->getSize(), this->getPixelSize(), this->getNormal(), this->getWavelength(), this->source, this->psi, this->delta, this->w0, this->l, this->p);
+    WaveFront C(this->getNormal(), this->getWavelength(), this->source, this->psi, this->delta, this->w0, this->l, this->p, this->getSize(), this->getPixelSize());
     for (int i = 0; i < C.N; i++)
         for (int j = 0; j < C.N; j++)
         {
@@ -267,11 +267,25 @@ WaveFront WaveFront::operator-(const WaveFront &other)
 
 WaveFront &WaveFront::operator+=(const WaveFront &other)
 {
-    for (int i = 0; i < this->N; i++)
-        for (int j = 0; j < this->N; j++)
+    auto relative_position = other.normal.pos() - this->normal.pos();
+
+    double u_shift = dot(relative_position, this -> u) ;
+    double v_shift = dot(relative_position, this -> v) ;
+
+    int j_offset = (int)(v_shift / this->getPixelSize());
+    int i_offset = (int)(u_shift / this->getPixelSize());
+    
+    for (int i = 0; i < other.N; i++)
+        for (int j = 0; j < other.N; j++)
         {
-            this->Ex[i][j] += other.Ex[i][j];
-            this->Ey[i][j] += other.Ey[i][j];
+            int actual_i = i + i_offset ;
+            int actual_j = j + j_offset ;
+
+            if (actual_i < this->N && actual_j < this->N && actual_i >= 0 && actual_j >= 0)
+            {
+                this->Ex[actual_i][actual_j] += other.Ex[i][j];
+                this->Ey[actual_i][actual_j] += other.Ey[i][j];
+            }
         }
     return *this;
 }

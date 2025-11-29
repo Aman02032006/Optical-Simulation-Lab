@@ -18,14 +18,15 @@ private:
     double size;
 
 public:
-    Camera(const vec3 &position, const vec3 &orientation, const std::string name, double size); // Constructor
-    virtual ~Camera() = default;                                                                // Destructor
+    Camera(const vec3 &position, const vec3 &orientation, const std::string name, double size = 0.02); // Constructor
+    virtual ~Camera() = default;                                                                       // Destructor
 
     double hit(const ray &beamlet) override;
     void interact_ray(ray &beamlet) override;
     void interact_wavefront(WaveFront &A) override;
 
-    void output(); // Plots the phase and intensity map of the sensed wavefront
+    WaveFront &getSensedWaveFront();
+    void reset();
 };
 
 #endif

@@ -50,8 +50,8 @@ cmake_ninja_workdir = D$:\Academics\Projects\QISS\out\build\x64-Debug\
 build cmake_object_order_depends_target_QISS: phony || cmake_object_order_depends_target_glfw cmake_object_order_depends_target_matplot cmake_object_order_depends_target_nodesoup
 
 build CMakeFiles\QISS.dir\src\camera.cpp.obj: CXX_COMPILER__QISS_unscanned_Debug D$:\Academics\Projects\QISS\src\camera.cpp || cmake_object_order_depends_target_QISS
-  DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -D_CRT_SECURE_NO_WARNINGS
-  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd
+  DEFINES = -DImDrawIdx="unsigned int" -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -D_CRT_SECURE_NO_WARNINGS
+  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /wd4834 /W0
   INCLUDES = -ID:\Academics\Projects\QISS\include -ID:\Academics\Projects\QISS\extern\FFTW\include -ID:\Academics\Projects\QISS\extern\ImGui -ID:\Academics\Projects\QISS\extern\ImPlot -ID:\Academics\Projects\QISS\extern\ImGui\backends -ID:\Academics\Projects\QISS\extern\Matplotplusplus\source -ID:\Academics\Projects\QISS\out\build\x64-Debug\extern\Matplotplusplus\source\matplot -ID:\Academics\Projects\QISS\extern\GLFW\include
   OBJECT_DIR = CMakeFiles\QISS.dir
   OBJECT_FILE_DIR = CMakeFiles\QISS.dir\src
@@ -59,8 +59,8 @@ build CMakeFiles\QISS.dir\src\camera.cpp.obj: CXX_COMPILER__QISS_unscanned_Debug
   TARGET_PDB = QISS.pdb
 
 build CMakeFiles\QISS.dir\src\main.cpp.obj: CXX_COMPILER__QISS_unscanned_Debug D$:\Academics\Projects\QISS\src\main.cpp || cmake_object_order_depends_target_QISS
-  DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -D_CRT_SECURE_NO_WARNINGS
-  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd
+  DEFINES = -DImDrawIdx="unsigned int" -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -D_CRT_SECURE_NO_WARNINGS
+  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /wd4834 /W0
   INCLUDES = -ID:\Academics\Projects\QISS\include -ID:\Academics\Projects\QISS\extern\FFTW\include -ID:\Academics\Projects\QISS\extern\ImGui -ID:\Academics\Projects\QISS\extern\ImPlot -ID:\Academics\Projects\QISS\extern\ImGui\backends -ID:\Academics\Projects\QISS\extern\Matplotplusplus\source -ID:\Academics\Projects\QISS\out\build\x64-Debug\extern\Matplotplusplus\source\matplot -ID:\Academics\Projects\QISS\extern\GLFW\include
   OBJECT_DIR = CMakeFiles\QISS.dir
   OBJECT_FILE_DIR = CMakeFiles\QISS.dir\src
@@ -68,8 +68,8 @@ build CMakeFiles\QISS.dir\src\main.cpp.obj: CXX_COMPILER__QISS_unscanned_Debug D
   TARGET_PDB = QISS.pdb
 
 build CMakeFiles\QISS.dir\src\optical_element.cpp.obj: CXX_COMPILER__QISS_unscanned_Debug D$:\Academics\Projects\QISS\src\optical_element.cpp || cmake_object_order_depends_target_QISS
-  DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -D_CRT_SECURE_NO_WARNINGS
-  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd
+  DEFINES = -DImDrawIdx="unsigned int" -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -D_CRT_SECURE_NO_WARNINGS
+  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /wd4834 /W0
   INCLUDES = -ID:\Academics\Projects\QISS\include -ID:\Academics\Projects\QISS\extern\FFTW\include -ID:\Academics\Projects\QISS\extern\ImGui -ID:\Academics\Projects\QISS\extern\ImPlot -ID:\Academics\Projects\QISS\extern\ImGui\backends -ID:\Academics\Projects\QISS\extern\Matplotplusplus\source -ID:\Academics\Projects\QISS\out\build\x64-Debug\extern\Matplotplusplus\source\matplot -ID:\Academics\Projects\QISS\extern\GLFW\include
   OBJECT_DIR = CMakeFiles\QISS.dir
   OBJECT_FILE_DIR = CMakeFiles\QISS.dir\src
@@ -77,8 +77,17 @@ build CMakeFiles\QISS.dir\src\optical_element.cpp.obj: CXX_COMPILER__QISS_unscan
   TARGET_PDB = QISS.pdb
 
 build CMakeFiles\QISS.dir\src\ray.cpp.obj: CXX_COMPILER__QISS_unscanned_Debug D$:\Academics\Projects\QISS\src\ray.cpp || cmake_object_order_depends_target_QISS
-  DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -D_CRT_SECURE_NO_WARNINGS
-  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd
+  DEFINES = -DImDrawIdx="unsigned int" -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -D_CRT_SECURE_NO_WARNINGS
+  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /wd4834 /W0
+  INCLUDES = -ID:\Academics\Projects\QISS\include -ID:\Academics\Projects\QISS\extern\FFTW\include -ID:\Academics\Projects\QISS\extern\ImGui -ID:\Academics\Projects\QISS\extern\ImPlot -ID:\Academics\Projects\QISS\extern\ImGui\backends -ID:\Academics\Projects\QISS\extern\Matplotplusplus\source -ID:\Academics\Projects\QISS\out\build\x64-Debug\extern\Matplotplusplus\source\matplot -ID:\Academics\Projects\QISS\extern\GLFW\include
+  OBJECT_DIR = CMakeFiles\QISS.dir
+  OBJECT_FILE_DIR = CMakeFiles\QISS.dir\src
+  TARGET_COMPILE_PDB = CMakeFiles\QISS.dir\
+  TARGET_PDB = QISS.pdb
+
+build CMakeFiles\QISS.dir\src\utils.cpp.obj: CXX_COMPILER__QISS_unscanned_Debug D$:\Academics\Projects\QISS\src\utils.cpp || cmake_object_order_depends_target_QISS
+  DEFINES = -DImDrawIdx="unsigned int" -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -D_CRT_SECURE_NO_WARNINGS
+  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /wd4834 /W0
   INCLUDES = -ID:\Academics\Projects\QISS\include -ID:\Academics\Projects\QISS\extern\FFTW\include -ID:\Academics\Projects\QISS\extern\ImGui -ID:\Academics\Projects\QISS\extern\ImPlot -ID:\Academics\Projects\QISS\extern\ImGui\backends -ID:\Academics\Projects\QISS\extern\Matplotplusplus\source -ID:\Academics\Projects\QISS\out\build\x64-Debug\extern\Matplotplusplus\source\matplot -ID:\Academics\Projects\QISS\extern\GLFW\include
   OBJECT_DIR = CMakeFiles\QISS.dir
   OBJECT_FILE_DIR = CMakeFiles\QISS.dir\src
@@ -86,8 +95,8 @@ build CMakeFiles\QISS.dir\src\ray.cpp.obj: CXX_COMPILER__QISS_unscanned_Debug D$
   TARGET_PDB = QISS.pdb
 
 build CMakeFiles\QISS.dir\src\vec3.cpp.obj: CXX_COMPILER__QISS_unscanned_Debug D$:\Academics\Projects\QISS\src\vec3.cpp || cmake_object_order_depends_target_QISS
-  DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -D_CRT_SECURE_NO_WARNINGS
-  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd
+  DEFINES = -DImDrawIdx="unsigned int" -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -D_CRT_SECURE_NO_WARNINGS
+  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /wd4834 /W0
   INCLUDES = -ID:\Academics\Projects\QISS\include -ID:\Academics\Projects\QISS\extern\FFTW\include -ID:\Academics\Projects\QISS\extern\ImGui -ID:\Academics\Projects\QISS\extern\ImPlot -ID:\Academics\Projects\QISS\extern\ImGui\backends -ID:\Academics\Projects\QISS\extern\Matplotplusplus\source -ID:\Academics\Projects\QISS\out\build\x64-Debug\extern\Matplotplusplus\source\matplot -ID:\Academics\Projects\QISS\extern\GLFW\include
   OBJECT_DIR = CMakeFiles\QISS.dir
   OBJECT_FILE_DIR = CMakeFiles\QISS.dir\src
@@ -95,8 +104,8 @@ build CMakeFiles\QISS.dir\src\vec3.cpp.obj: CXX_COMPILER__QISS_unscanned_Debug D
   TARGET_PDB = QISS.pdb
 
 build CMakeFiles\QISS.dir\src\wavefront.cpp.obj: CXX_COMPILER__QISS_unscanned_Debug D$:\Academics\Projects\QISS\src\wavefront.cpp || cmake_object_order_depends_target_QISS
-  DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -D_CRT_SECURE_NO_WARNINGS
-  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd
+  DEFINES = -DImDrawIdx="unsigned int" -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -D_CRT_SECURE_NO_WARNINGS
+  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /wd4834 /W0
   INCLUDES = -ID:\Academics\Projects\QISS\include -ID:\Academics\Projects\QISS\extern\FFTW\include -ID:\Academics\Projects\QISS\extern\ImGui -ID:\Academics\Projects\QISS\extern\ImPlot -ID:\Academics\Projects\QISS\extern\ImGui\backends -ID:\Academics\Projects\QISS\extern\Matplotplusplus\source -ID:\Academics\Projects\QISS\out\build\x64-Debug\extern\Matplotplusplus\source\matplot -ID:\Academics\Projects\QISS\extern\GLFW\include
   OBJECT_DIR = CMakeFiles\QISS.dir
   OBJECT_FILE_DIR = CMakeFiles\QISS.dir\src
@@ -104,8 +113,8 @@ build CMakeFiles\QISS.dir\src\wavefront.cpp.obj: CXX_COMPILER__QISS_unscanned_De
   TARGET_PDB = QISS.pdb
 
 build CMakeFiles\QISS.dir\extern\ImGui\imgui.cpp.obj: CXX_COMPILER__QISS_unscanned_Debug D$:\Academics\Projects\QISS\extern\ImGui\imgui.cpp || cmake_object_order_depends_target_QISS
-  DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -D_CRT_SECURE_NO_WARNINGS
-  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd
+  DEFINES = -DImDrawIdx="unsigned int" -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -D_CRT_SECURE_NO_WARNINGS
+  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /wd4834 /W0
   INCLUDES = -ID:\Academics\Projects\QISS\include -ID:\Academics\Projects\QISS\extern\FFTW\include -ID:\Academics\Projects\QISS\extern\ImGui -ID:\Academics\Projects\QISS\extern\ImPlot -ID:\Academics\Projects\QISS\extern\ImGui\backends -ID:\Academics\Projects\QISS\extern\Matplotplusplus\source -ID:\Academics\Projects\QISS\out\build\x64-Debug\extern\Matplotplusplus\source\matplot -ID:\Academics\Projects\QISS\extern\GLFW\include
   OBJECT_DIR = CMakeFiles\QISS.dir
   OBJECT_FILE_DIR = CMakeFiles\QISS.dir\extern\ImGui
@@ -113,8 +122,8 @@ build CMakeFiles\QISS.dir\extern\ImGui\imgui.cpp.obj: CXX_COMPILER__QISS_unscann
   TARGET_PDB = QISS.pdb
 
 build CMakeFiles\QISS.dir\extern\ImGui\imgui_demo.cpp.obj: CXX_COMPILER__QISS_unscanned_Debug D$:\Academics\Projects\QISS\extern\ImGui\imgui_demo.cpp || cmake_object_order_depends_target_QISS
-  DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -D_CRT_SECURE_NO_WARNINGS
-  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd
+  DEFINES = -DImDrawIdx="unsigned int" -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -D_CRT_SECURE_NO_WARNINGS
+  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /wd4834 /W0
   INCLUDES = -ID:\Academics\Projects\QISS\include -ID:\Academics\Projects\QISS\extern\FFTW\include -ID:\Academics\Projects\QISS\extern\ImGui -ID:\Academics\Projects\QISS\extern\ImPlot -ID:\Academics\Projects\QISS\extern\ImGui\backends -ID:\Academics\Projects\QISS\extern\Matplotplusplus\source -ID:\Academics\Projects\QISS\out\build\x64-Debug\extern\Matplotplusplus\source\matplot -ID:\Academics\Projects\QISS\extern\GLFW\include
   OBJECT_DIR = CMakeFiles\QISS.dir
   OBJECT_FILE_DIR = CMakeFiles\QISS.dir\extern\ImGui
@@ -122,8 +131,8 @@ build CMakeFiles\QISS.dir\extern\ImGui\imgui_demo.cpp.obj: CXX_COMPILER__QISS_un
   TARGET_PDB = QISS.pdb
 
 build CMakeFiles\QISS.dir\extern\ImGui\imgui_draw.cpp.obj: CXX_COMPILER__QISS_unscanned_Debug D$:\Academics\Projects\QISS\extern\ImGui\imgui_draw.cpp || cmake_object_order_depends_target_QISS
-  DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -D_CRT_SECURE_NO_WARNINGS
-  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd
+  DEFINES = -DImDrawIdx="unsigned int" -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -D_CRT_SECURE_NO_WARNINGS
+  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /wd4834 /W0
   INCLUDES = -ID:\Academics\Projects\QISS\include -ID:\Academics\Projects\QISS\extern\FFTW\include -ID:\Academics\Projects\QISS\extern\ImGui -ID:\Academics\Projects\QISS\extern\ImPlot -ID:\Academics\Projects\QISS\extern\ImGui\backends -ID:\Academics\Projects\QISS\extern\Matplotplusplus\source -ID:\Academics\Projects\QISS\out\build\x64-Debug\extern\Matplotplusplus\source\matplot -ID:\Academics\Projects\QISS\extern\GLFW\include
   OBJECT_DIR = CMakeFiles\QISS.dir
   OBJECT_FILE_DIR = CMakeFiles\QISS.dir\extern\ImGui
@@ -131,8 +140,8 @@ build CMakeFiles\QISS.dir\extern\ImGui\imgui_draw.cpp.obj: CXX_COMPILER__QISS_un
   TARGET_PDB = QISS.pdb
 
 build CMakeFiles\QISS.dir\extern\ImGui\imgui_tables.cpp.obj: CXX_COMPILER__QISS_unscanned_Debug D$:\Academics\Projects\QISS\extern\ImGui\imgui_tables.cpp || cmake_object_order_depends_target_QISS
-  DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -D_CRT_SECURE_NO_WARNINGS
-  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd
+  DEFINES = -DImDrawIdx="unsigned int" -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -D_CRT_SECURE_NO_WARNINGS
+  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /wd4834 /W0
   INCLUDES = -ID:\Academics\Projects\QISS\include -ID:\Academics\Projects\QISS\extern\FFTW\include -ID:\Academics\Projects\QISS\extern\ImGui -ID:\Academics\Projects\QISS\extern\ImPlot -ID:\Academics\Projects\QISS\extern\ImGui\backends -ID:\Academics\Projects\QISS\extern\Matplotplusplus\source -ID:\Academics\Projects\QISS\out\build\x64-Debug\extern\Matplotplusplus\source\matplot -ID:\Academics\Projects\QISS\extern\GLFW\include
   OBJECT_DIR = CMakeFiles\QISS.dir
   OBJECT_FILE_DIR = CMakeFiles\QISS.dir\extern\ImGui
@@ -140,8 +149,8 @@ build CMakeFiles\QISS.dir\extern\ImGui\imgui_tables.cpp.obj: CXX_COMPILER__QISS_
   TARGET_PDB = QISS.pdb
 
 build CMakeFiles\QISS.dir\extern\ImGui\imgui_widgets.cpp.obj: CXX_COMPILER__QISS_unscanned_Debug D$:\Academics\Projects\QISS\extern\ImGui\imgui_widgets.cpp || cmake_object_order_depends_target_QISS
-  DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -D_CRT_SECURE_NO_WARNINGS
-  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd
+  DEFINES = -DImDrawIdx="unsigned int" -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -D_CRT_SECURE_NO_WARNINGS
+  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /wd4834 /W0
   INCLUDES = -ID:\Academics\Projects\QISS\include -ID:\Academics\Projects\QISS\extern\FFTW\include -ID:\Academics\Projects\QISS\extern\ImGui -ID:\Academics\Projects\QISS\extern\ImPlot -ID:\Academics\Projects\QISS\extern\ImGui\backends -ID:\Academics\Projects\QISS\extern\Matplotplusplus\source -ID:\Academics\Projects\QISS\out\build\x64-Debug\extern\Matplotplusplus\source\matplot -ID:\Academics\Projects\QISS\extern\GLFW\include
   OBJECT_DIR = CMakeFiles\QISS.dir
   OBJECT_FILE_DIR = CMakeFiles\QISS.dir\extern\ImGui
@@ -149,8 +158,8 @@ build CMakeFiles\QISS.dir\extern\ImGui\imgui_widgets.cpp.obj: CXX_COMPILER__QISS
   TARGET_PDB = QISS.pdb
 
 build CMakeFiles\QISS.dir\extern\ImPlot\implot.cpp.obj: CXX_COMPILER__QISS_unscanned_Debug D$:\Academics\Projects\QISS\extern\ImPlot\implot.cpp || cmake_object_order_depends_target_QISS
-  DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -D_CRT_SECURE_NO_WARNINGS
-  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd
+  DEFINES = -DImDrawIdx="unsigned int" -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -D_CRT_SECURE_NO_WARNINGS
+  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /wd4834 /W0
   INCLUDES = -ID:\Academics\Projects\QISS\include -ID:\Academics\Projects\QISS\extern\FFTW\include -ID:\Academics\Projects\QISS\extern\ImGui -ID:\Academics\Projects\QISS\extern\ImPlot -ID:\Academics\Projects\QISS\extern\ImGui\backends -ID:\Academics\Projects\QISS\extern\Matplotplusplus\source -ID:\Academics\Projects\QISS\out\build\x64-Debug\extern\Matplotplusplus\source\matplot -ID:\Academics\Projects\QISS\extern\GLFW\include
   OBJECT_DIR = CMakeFiles\QISS.dir
   OBJECT_FILE_DIR = CMakeFiles\QISS.dir\extern\ImPlot
@@ -158,8 +167,8 @@ build CMakeFiles\QISS.dir\extern\ImPlot\implot.cpp.obj: CXX_COMPILER__QISS_unsca
   TARGET_PDB = QISS.pdb
 
 build CMakeFiles\QISS.dir\extern\ImPlot\implot_demo.cpp.obj: CXX_COMPILER__QISS_unscanned_Debug D$:\Academics\Projects\QISS\extern\ImPlot\implot_demo.cpp || cmake_object_order_depends_target_QISS
-  DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -D_CRT_SECURE_NO_WARNINGS
-  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd
+  DEFINES = -DImDrawIdx="unsigned int" -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -D_CRT_SECURE_NO_WARNINGS
+  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /wd4834 /W0
   INCLUDES = -ID:\Academics\Projects\QISS\include -ID:\Academics\Projects\QISS\extern\FFTW\include -ID:\Academics\Projects\QISS\extern\ImGui -ID:\Academics\Projects\QISS\extern\ImPlot -ID:\Academics\Projects\QISS\extern\ImGui\backends -ID:\Academics\Projects\QISS\extern\Matplotplusplus\source -ID:\Academics\Projects\QISS\out\build\x64-Debug\extern\Matplotplusplus\source\matplot -ID:\Academics\Projects\QISS\extern\GLFW\include
   OBJECT_DIR = CMakeFiles\QISS.dir
   OBJECT_FILE_DIR = CMakeFiles\QISS.dir\extern\ImPlot
@@ -167,8 +176,8 @@ build CMakeFiles\QISS.dir\extern\ImPlot\implot_demo.cpp.obj: CXX_COMPILER__QISS_
   TARGET_PDB = QISS.pdb
 
 build CMakeFiles\QISS.dir\extern\ImPlot\implot_items.cpp.obj: CXX_COMPILER__QISS_unscanned_Debug D$:\Academics\Projects\QISS\extern\ImPlot\implot_items.cpp || cmake_object_order_depends_target_QISS
-  DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -D_CRT_SECURE_NO_WARNINGS
-  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd
+  DEFINES = -DImDrawIdx="unsigned int" -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -D_CRT_SECURE_NO_WARNINGS
+  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /wd4834 /W0
   INCLUDES = -ID:\Academics\Projects\QISS\include -ID:\Academics\Projects\QISS\extern\FFTW\include -ID:\Academics\Projects\QISS\extern\ImGui -ID:\Academics\Projects\QISS\extern\ImPlot -ID:\Academics\Projects\QISS\extern\ImGui\backends -ID:\Academics\Projects\QISS\extern\Matplotplusplus\source -ID:\Academics\Projects\QISS\out\build\x64-Debug\extern\Matplotplusplus\source\matplot -ID:\Academics\Projects\QISS\extern\GLFW\include
   OBJECT_DIR = CMakeFiles\QISS.dir
   OBJECT_FILE_DIR = CMakeFiles\QISS.dir\extern\ImPlot
@@ -176,8 +185,8 @@ build CMakeFiles\QISS.dir\extern\ImPlot\implot_items.cpp.obj: CXX_COMPILER__QISS
   TARGET_PDB = QISS.pdb
 
 build CMakeFiles\QISS.dir\extern\ImGui\backends\imgui_impl_glfw.cpp.obj: CXX_COMPILER__QISS_unscanned_Debug D$:\Academics\Projects\QISS\extern\ImGui\backends\imgui_impl_glfw.cpp || cmake_object_order_depends_target_QISS
-  DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -D_CRT_SECURE_NO_WARNINGS
-  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd
+  DEFINES = -DImDrawIdx="unsigned int" -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -D_CRT_SECURE_NO_WARNINGS
+  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /wd4834 /W0
   INCLUDES = -ID:\Academics\Projects\QISS\include -ID:\Academics\Projects\QISS\extern\FFTW\include -ID:\Academics\Projects\QISS\extern\ImGui -ID:\Academics\Projects\QISS\extern\ImPlot -ID:\Academics\Projects\QISS\extern\ImGui\backends -ID:\Academics\Projects\QISS\extern\Matplotplusplus\source -ID:\Academics\Projects\QISS\out\build\x64-Debug\extern\Matplotplusplus\source\matplot -ID:\Academics\Projects\QISS\extern\GLFW\include
   OBJECT_DIR = CMakeFiles\QISS.dir
   OBJECT_FILE_DIR = CMakeFiles\QISS.dir\extern\ImGui\backends
@@ -185,8 +194,8 @@ build CMakeFiles\QISS.dir\extern\ImGui\backends\imgui_impl_glfw.cpp.obj: CXX_COM
   TARGET_PDB = QISS.pdb
 
 build CMakeFiles\QISS.dir\extern\ImGui\backends\imgui_impl_opengl3.cpp.obj: CXX_COMPILER__QISS_unscanned_Debug D$:\Academics\Projects\QISS\extern\ImGui\backends\imgui_impl_opengl3.cpp || cmake_object_order_depends_target_QISS
-  DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -D_CRT_SECURE_NO_WARNINGS
-  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd
+  DEFINES = -DImDrawIdx="unsigned int" -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -D_CRT_SECURE_NO_WARNINGS
+  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /wd4834 /W0
   INCLUDES = -ID:\Academics\Projects\QISS\include -ID:\Academics\Projects\QISS\extern\FFTW\include -ID:\Academics\Projects\QISS\extern\ImGui -ID:\Academics\Projects\QISS\extern\ImPlot -ID:\Academics\Projects\QISS\extern\ImGui\backends -ID:\Academics\Projects\QISS\extern\Matplotplusplus\source -ID:\Academics\Projects\QISS\out\build\x64-Debug\extern\Matplotplusplus\source\matplot -ID:\Academics\Projects\QISS\extern\GLFW\include
   OBJECT_DIR = CMakeFiles\QISS.dir
   OBJECT_FILE_DIR = CMakeFiles\QISS.dir\extern\ImGui\backends
@@ -201,10 +210,10 @@ build CMakeFiles\QISS.dir\extern\ImGui\backends\imgui_impl_opengl3.cpp.obj: CXX_
 #############################################
 # Link the executable QISS.exe
 
-build QISS.exe: CXX_EXECUTABLE_LINKER__QISS_Debug CMakeFiles\QISS.dir\src\camera.cpp.obj CMakeFiles\QISS.dir\src\main.cpp.obj CMakeFiles\QISS.dir\src\optical_element.cpp.obj CMakeFiles\QISS.dir\src\ray.cpp.obj CMakeFiles\QISS.dir\src\vec3.cpp.obj CMakeFiles\QISS.dir\src\wavefront.cpp.obj CMakeFiles\QISS.dir\extern\ImGui\imgui.cpp.obj CMakeFiles\QISS.dir\extern\ImGui\imgui_demo.cpp.obj CMakeFiles\QISS.dir\extern\ImGui\imgui_draw.cpp.obj CMakeFiles\QISS.dir\extern\ImGui\imgui_tables.cpp.obj CMakeFiles\QISS.dir\extern\ImGui\imgui_widgets.cpp.obj CMakeFiles\QISS.dir\extern\ImPlot\implot.cpp.obj CMakeFiles\QISS.dir\extern\ImPlot\implot_demo.cpp.obj CMakeFiles\QISS.dir\extern\ImPlot\implot_items.cpp.obj CMakeFiles\QISS.dir\extern\ImGui\backends\imgui_impl_glfw.cpp.obj CMakeFiles\QISS.dir\extern\ImGui\backends\imgui_impl_opengl3.cpp.obj | extern\Matplotplusplus\source\matplot\matplot.lib extern\GLFW\src\glfw3.lib D$:\Academics\Projects\QISS\extern\FFTW\lib\fftw3.lib D$:\Academics\Projects\QISS\extern\FFTW\lib\fftw3f.lib D$:\Academics\Projects\QISS\extern\FFTW\lib\fftw3l.lib extern\Matplotplusplus\source\3rd_party\nodesoup.lib || extern\GLFW\src\glfw3.lib extern\Matplotplusplus\source\3rd_party\nodesoup.lib extern\Matplotplusplus\source\matplot\matplot.lib
+build QISS.exe: CXX_EXECUTABLE_LINKER__QISS_Debug CMakeFiles\QISS.dir\src\camera.cpp.obj CMakeFiles\QISS.dir\src\main.cpp.obj CMakeFiles\QISS.dir\src\optical_element.cpp.obj CMakeFiles\QISS.dir\src\ray.cpp.obj CMakeFiles\QISS.dir\src\utils.cpp.obj CMakeFiles\QISS.dir\src\vec3.cpp.obj CMakeFiles\QISS.dir\src\wavefront.cpp.obj CMakeFiles\QISS.dir\extern\ImGui\imgui.cpp.obj CMakeFiles\QISS.dir\extern\ImGui\imgui_demo.cpp.obj CMakeFiles\QISS.dir\extern\ImGui\imgui_draw.cpp.obj CMakeFiles\QISS.dir\extern\ImGui\imgui_tables.cpp.obj CMakeFiles\QISS.dir\extern\ImGui\imgui_widgets.cpp.obj CMakeFiles\QISS.dir\extern\ImPlot\implot.cpp.obj CMakeFiles\QISS.dir\extern\ImPlot\implot_demo.cpp.obj CMakeFiles\QISS.dir\extern\ImPlot\implot_items.cpp.obj CMakeFiles\QISS.dir\extern\ImGui\backends\imgui_impl_glfw.cpp.obj CMakeFiles\QISS.dir\extern\ImGui\backends\imgui_impl_opengl3.cpp.obj | extern\Matplotplusplus\source\matplot\matplot.lib extern\GLFW\src\glfw3.lib D$:\Academics\Projects\QISS\extern\FFTW\lib\fftw3.lib D$:\Academics\Projects\QISS\extern\FFTW\lib\fftw3.lib D$:\Academics\Projects\QISS\extern\FFTW\lib\fftw3f.lib D$:\Academics\Projects\QISS\extern\FFTW\lib\fftw3l.lib extern\Matplotplusplus\source\3rd_party\nodesoup.lib || extern\GLFW\src\glfw3.lib extern\Matplotplusplus\source\3rd_party\nodesoup.lib extern\Matplotplusplus\source\matplot\matplot.lib
   FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -MDd
   LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:console
-  LINK_LIBRARIES = extern\Matplotplusplus\source\matplot\matplot.lib  extern\GLFW\src\glfw3.lib  opengl32.lib  fftw3.lib  D:\Academics\Projects\QISS\extern\FFTW\lib\fftw3.lib  D:\Academics\Projects\QISS\extern\FFTW\lib\fftw3f.lib  D:\Academics\Projects\QISS\extern\FFTW\lib\fftw3l.lib  gdi32.lib  extern\Matplotplusplus\source\3rd_party\nodesoup.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
+  LINK_LIBRARIES = extern\Matplotplusplus\source\matplot\matplot.lib  extern\GLFW\src\glfw3.lib  opengl32.lib  D:\Academics\Projects\QISS\extern\FFTW\lib\fftw3.lib  D:\Academics\Projects\QISS\extern\FFTW\lib\fftw3.lib  D:\Academics\Projects\QISS\extern\FFTW\lib\fftw3f.lib  D:\Academics\Projects\QISS\extern\FFTW\lib\fftw3l.lib  gdi32.lib  extern\Matplotplusplus\source\3rd_party\nodesoup.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
   OBJECT_DIR = CMakeFiles\QISS.dir
   POST_BUILD = C:\WINDOWS\system32\cmd.exe /C "cd /D D:\Academics\Projects\QISS\out\build\x64-Debug && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy_if_different D:/Academics/Projects/QISS/extern/FFTW/lib/libfftw3-3.dll D:/Academics/Projects/QISS/out/build/x64-Debug"
   PRE_LINK = cd .
@@ -945,7 +954,7 @@ build cmake_object_order_depends_target_matplot: phony || cmake_object_order_dep
 
 build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\backend\backend_interface.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug D$:\Academics\Projects\QISS\extern\Matplotplusplus\source\matplot\backend\backend_interface.cpp || cmake_object_order_depends_target_matplot
   DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2 -Dcimg_use_fftw3
-  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX
+  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX /wd4834 /W0
   INCLUDES = -ID:\Academics\Projects\QISS\extern\Matplotplusplus\source -ID:\Academics\Projects\QISS\out\build\x64-Debug\extern\Matplotplusplus\source\matplot -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\cimg -external:ID:\Academics\Projects\QISS\extern\FFTW\include -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\nodesoup\include -external:W0
   OBJECT_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir
   OBJECT_FILE_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\backend
@@ -954,7 +963,7 @@ build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\backend\backe
 
 build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\backend\gnuplot.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug D$:\Academics\Projects\QISS\extern\Matplotplusplus\source\matplot\backend\gnuplot.cpp || cmake_object_order_depends_target_matplot
   DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2 -Dcimg_use_fftw3
-  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX
+  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX /wd4834 /W0
   INCLUDES = -ID:\Academics\Projects\QISS\extern\Matplotplusplus\source -ID:\Academics\Projects\QISS\out\build\x64-Debug\extern\Matplotplusplus\source\matplot -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\cimg -external:ID:\Academics\Projects\QISS\extern\FFTW\include -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\nodesoup\include -external:W0
   OBJECT_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir
   OBJECT_FILE_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\backend
@@ -963,7 +972,7 @@ build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\backend\gnupl
 
 build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\backend\backend_registry.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug D$:\Academics\Projects\QISS\extern\Matplotplusplus\source\matplot\backend\backend_registry.cpp || cmake_object_order_depends_target_matplot
   DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2 -Dcimg_use_fftw3
-  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX
+  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX /wd4834 /W0
   INCLUDES = -ID:\Academics\Projects\QISS\extern\Matplotplusplus\source -ID:\Academics\Projects\QISS\out\build\x64-Debug\extern\Matplotplusplus\source\matplot -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\cimg -external:ID:\Academics\Projects\QISS\extern\FFTW\include -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\nodesoup\include -external:W0
   OBJECT_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir
   OBJECT_FILE_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\backend
@@ -972,7 +981,7 @@ build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\backend\backe
 
 build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\core\axes_type.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug D$:\Academics\Projects\QISS\extern\Matplotplusplus\source\matplot\core\axes_type.cpp || cmake_object_order_depends_target_matplot
   DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2 -Dcimg_use_fftw3
-  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX
+  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX /wd4834 /W0
   INCLUDES = -ID:\Academics\Projects\QISS\extern\Matplotplusplus\source -ID:\Academics\Projects\QISS\out\build\x64-Debug\extern\Matplotplusplus\source\matplot -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\cimg -external:ID:\Academics\Projects\QISS\extern\FFTW\include -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\nodesoup\include -external:W0
   OBJECT_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir
   OBJECT_FILE_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\core
@@ -981,7 +990,7 @@ build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\core\axes_typ
 
 build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\core\axes_object.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug D$:\Academics\Projects\QISS\extern\Matplotplusplus\source\matplot\core\axes_object.cpp || cmake_object_order_depends_target_matplot
   DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2 -Dcimg_use_fftw3
-  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX
+  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX /wd4834 /W0
   INCLUDES = -ID:\Academics\Projects\QISS\extern\Matplotplusplus\source -ID:\Academics\Projects\QISS\out\build\x64-Debug\extern\Matplotplusplus\source\matplot -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\cimg -external:ID:\Academics\Projects\QISS\extern\FFTW\include -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\nodesoup\include -external:W0
   OBJECT_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir
   OBJECT_FILE_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\core
@@ -990,7 +999,7 @@ build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\core\axes_obj
 
 build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\core\axis_type.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug D$:\Academics\Projects\QISS\extern\Matplotplusplus\source\matplot\core\axis_type.cpp || cmake_object_order_depends_target_matplot
   DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2 -Dcimg_use_fftw3
-  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX
+  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX /wd4834 /W0
   INCLUDES = -ID:\Academics\Projects\QISS\extern\Matplotplusplus\source -ID:\Academics\Projects\QISS\out\build\x64-Debug\extern\Matplotplusplus\source\matplot -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\cimg -external:ID:\Academics\Projects\QISS\extern\FFTW\include -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\nodesoup\include -external:W0
   OBJECT_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir
   OBJECT_FILE_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\core
@@ -999,7 +1008,7 @@ build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\core\axis_typ
 
 build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\core\figure_type.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug D$:\Academics\Projects\QISS\extern\Matplotplusplus\source\matplot\core\figure_type.cpp || cmake_object_order_depends_target_matplot
   DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2 -Dcimg_use_fftw3
-  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX
+  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX /wd4834 /W0
   INCLUDES = -ID:\Academics\Projects\QISS\extern\Matplotplusplus\source -ID:\Academics\Projects\QISS\out\build\x64-Debug\extern\Matplotplusplus\source\matplot -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\cimg -external:ID:\Academics\Projects\QISS\extern\FFTW\include -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\nodesoup\include -external:W0
   OBJECT_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir
   OBJECT_FILE_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\core
@@ -1008,7 +1017,7 @@ build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\core\figure_t
 
 build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\core\figure_registry.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug D$:\Academics\Projects\QISS\extern\Matplotplusplus\source\matplot\core\figure_registry.cpp || cmake_object_order_depends_target_matplot
   DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2 -Dcimg_use_fftw3
-  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX
+  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX /wd4834 /W0
   INCLUDES = -ID:\Academics\Projects\QISS\extern\Matplotplusplus\source -ID:\Academics\Projects\QISS\out\build\x64-Debug\extern\Matplotplusplus\source\matplot -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\cimg -external:ID:\Academics\Projects\QISS\extern\FFTW\include -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\nodesoup\include -external:W0
   OBJECT_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir
   OBJECT_FILE_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\core
@@ -1017,7 +1026,7 @@ build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\core\figure_r
 
 build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\core\legend.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug D$:\Academics\Projects\QISS\extern\Matplotplusplus\source\matplot\core\legend.cpp || cmake_object_order_depends_target_matplot
   DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2 -Dcimg_use_fftw3
-  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX
+  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX /wd4834 /W0
   INCLUDES = -ID:\Academics\Projects\QISS\extern\Matplotplusplus\source -ID:\Academics\Projects\QISS\out\build\x64-Debug\extern\Matplotplusplus\source\matplot -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\cimg -external:ID:\Academics\Projects\QISS\extern\FFTW\include -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\nodesoup\include -external:W0
   OBJECT_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir
   OBJECT_FILE_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\core
@@ -1026,7 +1035,7 @@ build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\core\legend.c
 
 build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\core\line_spec.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug D$:\Academics\Projects\QISS\extern\Matplotplusplus\source\matplot\core\line_spec.cpp || cmake_object_order_depends_target_matplot
   DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2 -Dcimg_use_fftw3
-  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX
+  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX /wd4834 /W0
   INCLUDES = -ID:\Academics\Projects\QISS\extern\Matplotplusplus\source -ID:\Academics\Projects\QISS\out\build\x64-Debug\extern\Matplotplusplus\source\matplot -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\cimg -external:ID:\Academics\Projects\QISS\extern\FFTW\include -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\nodesoup\include -external:W0
   OBJECT_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir
   OBJECT_FILE_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\core
@@ -1035,7 +1044,7 @@ build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\core\line_spe
 
 build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\util\colors.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug D$:\Academics\Projects\QISS\extern\Matplotplusplus\source\matplot\util\colors.cpp || cmake_object_order_depends_target_matplot
   DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2 -Dcimg_use_fftw3
-  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX
+  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX /wd4834 /W0
   INCLUDES = -ID:\Academics\Projects\QISS\extern\Matplotplusplus\source -ID:\Academics\Projects\QISS\out\build\x64-Debug\extern\Matplotplusplus\source\matplot -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\cimg -external:ID:\Academics\Projects\QISS\extern\FFTW\include -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\nodesoup\include -external:W0
   OBJECT_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir
   OBJECT_FILE_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\util
@@ -1044,7 +1053,7 @@ build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\util\colors.c
 
 build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\util\common.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug D$:\Academics\Projects\QISS\extern\Matplotplusplus\source\matplot\util\common.cpp || cmake_object_order_depends_target_matplot
   DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2 -Dcimg_use_fftw3
-  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX
+  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX /wd4834 /W0
   INCLUDES = -ID:\Academics\Projects\QISS\extern\Matplotplusplus\source -ID:\Academics\Projects\QISS\out\build\x64-Debug\extern\Matplotplusplus\source\matplot -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\cimg -external:ID:\Academics\Projects\QISS\extern\FFTW\include -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\nodesoup\include -external:W0
   OBJECT_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir
   OBJECT_FILE_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\util
@@ -1053,7 +1062,7 @@ build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\util\common.c
 
 build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\util\contourc.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug D$:\Academics\Projects\QISS\extern\Matplotplusplus\source\matplot\util\contourc.cpp || cmake_object_order_depends_target_matplot
   DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2 -Dcimg_use_fftw3
-  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX
+  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX /wd4834 /W0
   INCLUDES = -ID:\Academics\Projects\QISS\extern\Matplotplusplus\source -ID:\Academics\Projects\QISS\out\build\x64-Debug\extern\Matplotplusplus\source\matplot -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\cimg -external:ID:\Academics\Projects\QISS\extern\FFTW\include -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\nodesoup\include -external:W0
   OBJECT_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir
   OBJECT_FILE_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\util
@@ -1062,7 +1071,7 @@ build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\util\contourc
 
 build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\util\popen.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug D$:\Academics\Projects\QISS\extern\Matplotplusplus\source\matplot\util\popen.cpp || cmake_object_order_depends_target_matplot
   DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2 -Dcimg_use_fftw3
-  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX
+  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX /wd4834 /W0
   INCLUDES = -ID:\Academics\Projects\QISS\extern\Matplotplusplus\source -ID:\Academics\Projects\QISS\out\build\x64-Debug\extern\Matplotplusplus\source\matplot -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\cimg -external:ID:\Academics\Projects\QISS\extern\FFTW\include -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\nodesoup\include -external:W0
   OBJECT_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir
   OBJECT_FILE_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\util
@@ -1071,7 +1080,7 @@ build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\util\popen.cp
 
 build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\util\world_cities.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug D$:\Academics\Projects\QISS\extern\Matplotplusplus\source\matplot\util\world_cities.cpp || cmake_object_order_depends_target_matplot
   DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2 -Dcimg_use_fftw3
-  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX
+  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX /wd4834 /W0
   INCLUDES = -ID:\Academics\Projects\QISS\extern\Matplotplusplus\source -ID:\Academics\Projects\QISS\out\build\x64-Debug\extern\Matplotplusplus\source\matplot -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\cimg -external:ID:\Academics\Projects\QISS\extern\FFTW\include -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\nodesoup\include -external:W0
   OBJECT_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir
   OBJECT_FILE_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\util
@@ -1080,7 +1089,7 @@ build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\util\world_ci
 
 build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\util\world_map_10m.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug D$:\Academics\Projects\QISS\extern\Matplotplusplus\source\matplot\util\world_map_10m.cpp || cmake_object_order_depends_target_matplot
   DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2 -Dcimg_use_fftw3
-  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX
+  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX /wd4834 /W0
   INCLUDES = -ID:\Academics\Projects\QISS\extern\Matplotplusplus\source -ID:\Academics\Projects\QISS\out\build\x64-Debug\extern\Matplotplusplus\source\matplot -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\cimg -external:ID:\Academics\Projects\QISS\extern\FFTW\include -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\nodesoup\include -external:W0
   OBJECT_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir
   OBJECT_FILE_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\util
@@ -1089,7 +1098,7 @@ build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\util\world_ma
 
 build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\util\world_map_50m.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug D$:\Academics\Projects\QISS\extern\Matplotplusplus\source\matplot\util\world_map_50m.cpp || cmake_object_order_depends_target_matplot
   DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2 -Dcimg_use_fftw3
-  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX
+  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX /wd4834 /W0
   INCLUDES = -ID:\Academics\Projects\QISS\extern\Matplotplusplus\source -ID:\Academics\Projects\QISS\out\build\x64-Debug\extern\Matplotplusplus\source\matplot -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\cimg -external:ID:\Academics\Projects\QISS\extern\FFTW\include -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\nodesoup\include -external:W0
   OBJECT_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir
   OBJECT_FILE_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\util
@@ -1098,7 +1107,7 @@ build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\util\world_ma
 
 build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\util\world_map_110m.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug D$:\Academics\Projects\QISS\extern\Matplotplusplus\source\matplot\util\world_map_110m.cpp || cmake_object_order_depends_target_matplot
   DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2 -Dcimg_use_fftw3
-  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX
+  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX /wd4834 /W0
   INCLUDES = -ID:\Academics\Projects\QISS\extern\Matplotplusplus\source -ID:\Academics\Projects\QISS\out\build\x64-Debug\extern\Matplotplusplus\source\matplot -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\cimg -external:ID:\Academics\Projects\QISS\extern\FFTW\include -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\nodesoup\include -external:W0
   OBJECT_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir
   OBJECT_FILE_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\util
@@ -1107,7 +1116,7 @@ build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\util\world_ma
 
 build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects\bars.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug D$:\Academics\Projects\QISS\extern\Matplotplusplus\source\matplot\axes_objects\bars.cpp || cmake_object_order_depends_target_matplot
   DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2 -Dcimg_use_fftw3
-  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX
+  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX /wd4834 /W0
   INCLUDES = -ID:\Academics\Projects\QISS\extern\Matplotplusplus\source -ID:\Academics\Projects\QISS\out\build\x64-Debug\extern\Matplotplusplus\source\matplot -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\cimg -external:ID:\Academics\Projects\QISS\extern\FFTW\include -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\nodesoup\include -external:W0
   OBJECT_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir
   OBJECT_FILE_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects
@@ -1116,7 +1125,7 @@ build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects\
 
 build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects\box_chart.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug D$:\Academics\Projects\QISS\extern\Matplotplusplus\source\matplot\axes_objects\box_chart.cpp || cmake_object_order_depends_target_matplot
   DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2 -Dcimg_use_fftw3
-  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX
+  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX /wd4834 /W0
   INCLUDES = -ID:\Academics\Projects\QISS\extern\Matplotplusplus\source -ID:\Academics\Projects\QISS\out\build\x64-Debug\extern\Matplotplusplus\source\matplot -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\cimg -external:ID:\Academics\Projects\QISS\extern\FFTW\include -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\nodesoup\include -external:W0
   OBJECT_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir
   OBJECT_FILE_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects
@@ -1125,7 +1134,7 @@ build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects\
 
 build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects\circles.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug D$:\Academics\Projects\QISS\extern\Matplotplusplus\source\matplot\axes_objects\circles.cpp || cmake_object_order_depends_target_matplot
   DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2 -Dcimg_use_fftw3
-  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX
+  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX /wd4834 /W0
   INCLUDES = -ID:\Academics\Projects\QISS\extern\Matplotplusplus\source -ID:\Academics\Projects\QISS\out\build\x64-Debug\extern\Matplotplusplus\source\matplot -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\cimg -external:ID:\Academics\Projects\QISS\extern\FFTW\include -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\nodesoup\include -external:W0
   OBJECT_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir
   OBJECT_FILE_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects
@@ -1134,7 +1143,7 @@ build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects\
 
 build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects\contours.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug D$:\Academics\Projects\QISS\extern\Matplotplusplus\source\matplot\axes_objects\contours.cpp || cmake_object_order_depends_target_matplot
   DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2 -Dcimg_use_fftw3
-  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX
+  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX /wd4834 /W0
   INCLUDES = -ID:\Academics\Projects\QISS\extern\Matplotplusplus\source -ID:\Academics\Projects\QISS\out\build\x64-Debug\extern\Matplotplusplus\source\matplot -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\cimg -external:ID:\Academics\Projects\QISS\extern\FFTW\include -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\nodesoup\include -external:W0
   OBJECT_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir
   OBJECT_FILE_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects
@@ -1143,7 +1152,7 @@ build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects\
 
 build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects\error_bar.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug D$:\Academics\Projects\QISS\extern\Matplotplusplus\source\matplot\axes_objects\error_bar.cpp || cmake_object_order_depends_target_matplot
   DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2 -Dcimg_use_fftw3
-  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX
+  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX /wd4834 /W0
   INCLUDES = -ID:\Academics\Projects\QISS\extern\Matplotplusplus\source -ID:\Academics\Projects\QISS\out\build\x64-Debug\extern\Matplotplusplus\source\matplot -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\cimg -external:ID:\Academics\Projects\QISS\extern\FFTW\include -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\nodesoup\include -external:W0
   OBJECT_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir
   OBJECT_FILE_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects
@@ -1152,7 +1161,7 @@ build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects\
 
 build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects\filled_area.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug D$:\Academics\Projects\QISS\extern\Matplotplusplus\source\matplot\axes_objects\filled_area.cpp || cmake_object_order_depends_target_matplot
   DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2 -Dcimg_use_fftw3
-  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX
+  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX /wd4834 /W0
   INCLUDES = -ID:\Academics\Projects\QISS\extern\Matplotplusplus\source -ID:\Academics\Projects\QISS\out\build\x64-Debug\extern\Matplotplusplus\source\matplot -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\cimg -external:ID:\Academics\Projects\QISS\extern\FFTW\include -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\nodesoup\include -external:W0
   OBJECT_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir
   OBJECT_FILE_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects
@@ -1161,7 +1170,7 @@ build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects\
 
 build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects\function_line.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug D$:\Academics\Projects\QISS\extern\Matplotplusplus\source\matplot\axes_objects\function_line.cpp || cmake_object_order_depends_target_matplot
   DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2 -Dcimg_use_fftw3
-  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX
+  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX /wd4834 /W0
   INCLUDES = -ID:\Academics\Projects\QISS\extern\Matplotplusplus\source -ID:\Academics\Projects\QISS\out\build\x64-Debug\extern\Matplotplusplus\source\matplot -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\cimg -external:ID:\Academics\Projects\QISS\extern\FFTW\include -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\nodesoup\include -external:W0
   OBJECT_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir
   OBJECT_FILE_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects
@@ -1170,7 +1179,7 @@ build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects\
 
 build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects\histogram.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug D$:\Academics\Projects\QISS\extern\Matplotplusplus\source\matplot\axes_objects\histogram.cpp || cmake_object_order_depends_target_matplot
   DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2 -Dcimg_use_fftw3
-  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX
+  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX /wd4834 /W0
   INCLUDES = -ID:\Academics\Projects\QISS\extern\Matplotplusplus\source -ID:\Academics\Projects\QISS\out\build\x64-Debug\extern\Matplotplusplus\source\matplot -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\cimg -external:ID:\Academics\Projects\QISS\extern\FFTW\include -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\nodesoup\include -external:W0
   OBJECT_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir
   OBJECT_FILE_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects
@@ -1179,7 +1188,7 @@ build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects\
 
 build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects\labels.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug D$:\Academics\Projects\QISS\extern\Matplotplusplus\source\matplot\axes_objects\labels.cpp || cmake_object_order_depends_target_matplot
   DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2 -Dcimg_use_fftw3
-  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX
+  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX /wd4834 /W0
   INCLUDES = -ID:\Academics\Projects\QISS\extern\Matplotplusplus\source -ID:\Academics\Projects\QISS\out\build\x64-Debug\extern\Matplotplusplus\source\matplot -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\cimg -external:ID:\Academics\Projects\QISS\extern\FFTW\include -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\nodesoup\include -external:W0
   OBJECT_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir
   OBJECT_FILE_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects
@@ -1188,7 +1197,7 @@ build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects\
 
 build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects\line.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug D$:\Academics\Projects\QISS\extern\Matplotplusplus\source\matplot\axes_objects\line.cpp || cmake_object_order_depends_target_matplot
   DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2 -Dcimg_use_fftw3
-  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX
+  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX /wd4834 /W0
   INCLUDES = -ID:\Academics\Projects\QISS\extern\Matplotplusplus\source -ID:\Academics\Projects\QISS\out\build\x64-Debug\extern\Matplotplusplus\source\matplot -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\cimg -external:ID:\Academics\Projects\QISS\extern\FFTW\include -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\nodesoup\include -external:W0
   OBJECT_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir
   OBJECT_FILE_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects
@@ -1197,7 +1206,7 @@ build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects\
 
 build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects\matrix.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug D$:\Academics\Projects\QISS\extern\Matplotplusplus\source\matplot\axes_objects\matrix.cpp || cmake_object_order_depends_target_matplot
   DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2 -Dcimg_use_fftw3
-  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX
+  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX /wd4834 /W0
   INCLUDES = -ID:\Academics\Projects\QISS\extern\Matplotplusplus\source -ID:\Academics\Projects\QISS\out\build\x64-Debug\extern\Matplotplusplus\source\matplot -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\cimg -external:ID:\Academics\Projects\QISS\extern\FFTW\include -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\nodesoup\include -external:W0
   OBJECT_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir
   OBJECT_FILE_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects
@@ -1206,7 +1215,7 @@ build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects\
 
 build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects\network.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug D$:\Academics\Projects\QISS\extern\Matplotplusplus\source\matplot\axes_objects\network.cpp || cmake_object_order_depends_target_matplot
   DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2 -Dcimg_use_fftw3
-  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX
+  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX /wd4834 /W0
   INCLUDES = -ID:\Academics\Projects\QISS\extern\Matplotplusplus\source -ID:\Academics\Projects\QISS\out\build\x64-Debug\extern\Matplotplusplus\source\matplot -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\cimg -external:ID:\Academics\Projects\QISS\extern\FFTW\include -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\nodesoup\include -external:W0
   OBJECT_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir
   OBJECT_FILE_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects
@@ -1215,7 +1224,7 @@ build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects\
 
 build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects\parallel_lines.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug D$:\Academics\Projects\QISS\extern\Matplotplusplus\source\matplot\axes_objects\parallel_lines.cpp || cmake_object_order_depends_target_matplot
   DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2 -Dcimg_use_fftw3
-  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX
+  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX /wd4834 /W0
   INCLUDES = -ID:\Academics\Projects\QISS\extern\Matplotplusplus\source -ID:\Academics\Projects\QISS\out\build\x64-Debug\extern\Matplotplusplus\source\matplot -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\cimg -external:ID:\Academics\Projects\QISS\extern\FFTW\include -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\nodesoup\include -external:W0
   OBJECT_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir
   OBJECT_FILE_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects
@@ -1224,7 +1233,7 @@ build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects\
 
 build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects\stair.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug D$:\Academics\Projects\QISS\extern\Matplotplusplus\source\matplot\axes_objects\stair.cpp || cmake_object_order_depends_target_matplot
   DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2 -Dcimg_use_fftw3
-  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX
+  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX /wd4834 /W0
   INCLUDES = -ID:\Academics\Projects\QISS\extern\Matplotplusplus\source -ID:\Academics\Projects\QISS\out\build\x64-Debug\extern\Matplotplusplus\source\matplot -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\cimg -external:ID:\Academics\Projects\QISS\extern\FFTW\include -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\nodesoup\include -external:W0
   OBJECT_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir
   OBJECT_FILE_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects
@@ -1233,7 +1242,7 @@ build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects\
 
 build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects\string_function.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug D$:\Academics\Projects\QISS\extern\Matplotplusplus\source\matplot\axes_objects\string_function.cpp || cmake_object_order_depends_target_matplot
   DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2 -Dcimg_use_fftw3
-  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX
+  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX /wd4834 /W0
   INCLUDES = -ID:\Academics\Projects\QISS\extern\Matplotplusplus\source -ID:\Academics\Projects\QISS\out\build\x64-Debug\extern\Matplotplusplus\source\matplot -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\cimg -external:ID:\Academics\Projects\QISS\extern\FFTW\include -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\nodesoup\include -external:W0
   OBJECT_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir
   OBJECT_FILE_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects
@@ -1242,7 +1251,7 @@ build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects\
 
 build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects\surface.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug D$:\Academics\Projects\QISS\extern\Matplotplusplus\source\matplot\axes_objects\surface.cpp || cmake_object_order_depends_target_matplot
   DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2 -Dcimg_use_fftw3
-  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX
+  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX /wd4834 /W0
   INCLUDES = -ID:\Academics\Projects\QISS\extern\Matplotplusplus\source -ID:\Academics\Projects\QISS\out\build\x64-Debug\extern\Matplotplusplus\source\matplot -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\cimg -external:ID:\Academics\Projects\QISS\extern\FFTW\include -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\nodesoup\include -external:W0
   OBJECT_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir
   OBJECT_FILE_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects
@@ -1251,7 +1260,7 @@ build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects\
 
 build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects\vectors.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug D$:\Academics\Projects\QISS\extern\Matplotplusplus\source\matplot\axes_objects\vectors.cpp || cmake_object_order_depends_target_matplot
   DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2 -Dcimg_use_fftw3
-  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX
+  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX /wd4834 /W0
   INCLUDES = -ID:\Academics\Projects\QISS\extern\Matplotplusplus\source -ID:\Academics\Projects\QISS\out\build\x64-Debug\extern\Matplotplusplus\source\matplot -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\cimg -external:ID:\Academics\Projects\QISS\extern\FFTW\include -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\nodesoup\include -external:W0
   OBJECT_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir
   OBJECT_FILE_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects
@@ -1260,7 +1269,7 @@ build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects\
 
 build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\freestanding\axes_functions.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug D$:\Academics\Projects\QISS\extern\Matplotplusplus\source\matplot\freestanding\axes_functions.cpp || cmake_object_order_depends_target_matplot
   DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2 -Dcimg_use_fftw3
-  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX
+  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX /wd4834 /W0
   INCLUDES = -ID:\Academics\Projects\QISS\extern\Matplotplusplus\source -ID:\Academics\Projects\QISS\out\build\x64-Debug\extern\Matplotplusplus\source\matplot -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\cimg -external:ID:\Academics\Projects\QISS\extern\FFTW\include -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\nodesoup\include -external:W0
   OBJECT_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir
   OBJECT_FILE_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\freestanding
@@ -1269,7 +1278,7 @@ build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\freestanding\
 
 build extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\freestanding\histcounts.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug D$:\Academics\Projects\QISS\extern\Matplotplusplus\source\matplot\freestanding\histcounts.cpp || cmake_object_order_depends_target_matplot
   DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2 -Dcimg_use_fftw3
-  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX
+  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /WX /wd4834 /W0
   INCLUDES = -ID:\Academics\Projects\QISS\extern\Matplotplusplus\source -ID:\Academics\Projects\QISS\out\build\x64-Debug\extern\Matplotplusplus\source\matplot -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\cimg -external:ID:\Academics\Projects\QISS\extern\FFTW\include -external:ID:\Academics\Projects\QISS\extern\Matplotplusplus\source\3rd_party\nodesoup\include -external:W0
   OBJECT_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir
   OBJECT_FILE_DIR = extern\Matplotplusplus\source\matplot\CMakeFiles\matplot.dir\freestanding

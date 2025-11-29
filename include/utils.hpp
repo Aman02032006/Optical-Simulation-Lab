@@ -1,19 +1,27 @@
-#ifndef UTILS_H
-#define UTILS_H
+#ifndef UTILS_HPP
+#define UTILS_HPP
 
 #pragma once
+
 #include <cmath>
 #include <cstdlib>
 #include <limits>
 
-using namespace std;
-
-// Constants
-
-const double INF = numeric_limits<double>::infinity();
+// --- Constants ---
+const double INF = std::numeric_limits<double>::infinity();
 const double PI = 3.1415926535897932385;
 
-// Utility Functions
+// --- Enums ---
+enum class FieldType
+{
+    PLANE,
+    GAUSSIAN,
+    LG,
+    HG
+};
+
+// --- Inline Utility Functions ---
+// (These must stay in the header to be inlined)
 
 inline double degrees_to_radians(double degrees)
 {
@@ -23,7 +31,7 @@ inline double degrees_to_radians(double degrees)
 // Generates random doubles in [0.0, 1.0)
 inline double random_double()
 {
-    return std ::rand() / (RAND_MAX + 1.0);
+    return std::rand() / (RAND_MAX + 1.0);
 }
 
 inline double random_double(double min, double max)
@@ -36,14 +44,6 @@ inline double sq(double a)
     return a * a;
 }
 
-enum class FieldType
-{
-    PLANE,
-    GAUSSIAN,
-    LG,
-    HG
-};
-
 inline double factorial(int n)
 {
     double res = 1.0;
@@ -52,33 +52,10 @@ inline double factorial(int n)
     return res;
 }
 
-double genLaguerre(int p, int l, double x)
-{
-    double sum = 0.0;
-    for (int m = 0; m <= p; ++m)
-    {
-        double term = pow(-1, m) * factorial(p + l) /
-                      (factorial(p - m) * factorial(l + m) * factorial(m)) *
-                      pow(x, m);
-        sum += term;
-    }
-    return sum;
-}
+// --- Function Declarations ---
+// (Definitions moved to utils.cpp to fix Linker Errors)
 
-double hermitePol(int n, double x)
-{
-    if (n == 0)
-        return 1.0;
-    if (n == 1)
-        return 2.0 * x;
-    double Hnm2 = 1.0, Hnm1 = 2.0 * x, Hn;
-    for (int i = 2; i <= n; ++i)
-    {
-        Hn = 2.0 * x * Hnm1 - 2.0 * (i - 1) * Hnm2;
-        Hnm2 = Hnm1;
-        Hnm1 = Hn;
-    }
-    return Hn;
-}
+double genLaguerre(int p, int l, double x);
+double hermitePol(int n, double x);
 
-#endif
+#endif // UTILS_HPP
