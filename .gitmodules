@@ -13,3 +13,6 @@
 [submodule "extern/Matplotplusplus"]
 	path = extern/Matplotplusplus
 	url = https://github.com/alandefreitas/matplotplusplus.git
+[submodule "extern/glad"]
+	path = extern/glad
+	url = https://github.com/libigl/libigl-glad.git

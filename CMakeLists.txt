@@ -63,6 +63,7 @@ target_sources(QISS PRIVATE
 # --- GLFW ---
 set(GLFW_ROOT "${PROJECT_SOURCE_DIR}/extern/GLFW")
 add_subdirectory(${GLFW_ROOT})
+add_subdirectory(extern/glad)
 
 # --- OpenGL ---
 find_package(OpenGL REQUIRED)
@@ -104,6 +105,8 @@ target_link_libraries(QISS PRIVATE
 
     # FFTW (for physics)
     ${FFTW_LIB}
+
+    glad
 )
 
 # -----------------------------
@@ -122,4 +125,18 @@ add_custom_command(TARGET QISS POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_if_different
         ${FFTW_LIB_DIR}/libfftw3-3.dll
         $<TARGET_FILE_DIR:QISS>
+)
+
+# -----------------------------
+# 8. Asset Management
+# -----------------------------
+add_custom_command(TARGET QISS PRE_BUILD
+    COMMAND ${CMAKE_COMMAND} -E make_directory $<TARGET_FILE_DIR:QISS>/icons
+)
+
+# Copy all files from project_root/icons to build_dir/icons
+add_custom_command(TARGET QISS POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+    ${CMAKE_SOURCE_DIR}/icons
+    $<TARGET_FILE_DIR:QISS>/icons
 )

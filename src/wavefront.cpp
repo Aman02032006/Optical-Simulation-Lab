@@ -13,7 +13,7 @@ WaveFront::WaveFront(ray normal, double wavelength, FieldType source, double psi
     get_LocalFrame();
 }
 
-// Getters 
+// Getters
 double WaveFront::getSize() { return size; }
 double WaveFront::getPixelSize() { return pixel_size; }
 double WaveFront::getWavelength() { return wavelength; }
@@ -22,7 +22,7 @@ ray WaveFront::getNormal() { return normal; }
 // Local frame computation
 void WaveFront::get_LocalFrame()
 {
-    vec3 w = normal.dir();
+    w = normal.dir();
     vec3 temp = (std::abs(w.x()) < 0.9) ? vec3(1.0, 0.0, 0.0) : vec3(0.0, 1.0, 0.0);
 
     u = unit_vector(cross(w, temp));
@@ -267,26 +267,43 @@ WaveFront WaveFront::operator-(const WaveFront &other)
 
 WaveFront &WaveFront::operator+=(const WaveFront &other)
 {
-    auto relative_position = other.normal.pos() - this->normal.pos();
+    const double k = 2.0 * PI / other.wavelength;
 
-    double u_shift = dot(relative_position, this -> u) ;
-    double v_shift = dot(relative_position, this -> v) ;
+    std::cout << "[Wavefront] : " << k << std::endl;
+    std::cout << "[Wavefront] : " << other.w << std::endl;
+    std::cout << "[Wavefront] : " << this->w << std::endl;
 
-    int j_offset = (int)(v_shift / this->getPixelSize());
-    int i_offset = (int)(u_shift / this->getPixelSize());
-    
+    vec3 this_center = this->normal.pos();
+    vec3 this_normal = this->w;
+    vec3 other_center = other.normal.pos();
+    vec3 other_normal = other.w;
+
+    double denominator = dot(other_normal, this_normal);
+
     for (int i = 0; i < other.N; i++)
+    {
         for (int j = 0; j < other.N; j++)
         {
-            int actual_i = i + i_offset ;
-            int actual_j = j + j_offset ;
+            vec3 SourcePixelPosition = other_center + (i - other.N / 2.0) * other.pixel_size * other.u + (j - other.N / 2.0) * other.pixel_size * other.v;
+            double DistanceToThisPlane = 0.0;
+            if (std::abs(denominator) >= 1e-6)
+                DistanceToThisPlane = dot(this_center - SourcePixelPosition, this_normal) / denominator;
+            SourcePixelPosition += DistanceToThisPlane * other_normal;
 
-            if (actual_i < this->N && actual_j < this->N && actual_i >= 0 && actual_j >= 0)
+            int iThis = (int)(dot(SourcePixelPosition - this_center, this->u) / this->pixel_size + this->N / 2.0);
+            int jThis = (int)(dot(SourcePixelPosition - this_center, this->v) / this->pixel_size + this->N / 2.0);
+
+            if (iThis >= 0 && iThis < this->N && jThis >= 0 && jThis < this->N)
             {
-                this->Ex[actual_i][actual_j] += other.Ex[i][j];
-                this->Ey[actual_i][actual_j] += other.Ey[i][j];
+                std::complex<double> PhaseFactor = std::polar(1.0, k * DistanceToThisPlane);
+                this->Ex[iThis][jThis] += other.Ex[i][j] * PhaseFactor;
+                this->Ey[iThis][jThis] += other.Ey[i][j] * PhaseFactor;
             }
         }
+    }
+
+    std::cout << "[Wavefront] : Wavefront added" << std::endl;
+
     return *this;
 }
 
@@ -305,4 +322,57 @@ WaveFront &WaveFront::operator-=(const WaveFront &other)
 void WaveFront::reflect(vec3 n)
 {
     normal.reflect(n);
+    get_LocalFrame();
+}
+
+void WaveFront::setPosition(vec3 pos)
+{
+    normal = ray(pos, normal.dir());
+}
+
+void WaveFront::setDirection(vec3 dir)
+{
+    normal = ray(normal.pos(), dir);
+    get_LocalFrame();
+}
+
+void WaveFront::setSize(double s)
+{
+    size = s;
+}
+
+void WaveFront::setPixelSize(double px)
+{
+    pixel_size = px;
+}
+
+void WaveFront::setWavelength(double w)
+{
+    wavelength = w;
+}
+
+void WaveFront::setFieldType(FieldType type)
+{
+    source = type;
+}
+
+void WaveFront::setPsi(double theta)
+{
+    psi = theta;
+}
+
+void WaveFront::setDelta(double theta)
+{
+    delta = theta;
+}
+
+void WaveFront::setBeamWaist(double w)
+{
+    w0 = w;
+}
+
+void WaveFront::setBeamMode(int L, int P)
+{
+    l = L;
+    p = P;
 }

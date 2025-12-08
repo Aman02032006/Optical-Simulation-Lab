@@ -41,3 +41,21 @@ void Camera::reset()
 {
     sensed_wavefront.scale(0.0);
 }
+
+void Camera::setPosition(vec3 pos)
+{
+    OpticalElement::setPosition(pos);
+    sensed_wavefront.setPosition(pos);
+}
+
+void Camera::setOrientation(vec3 o)
+{
+    OpticalElement::setOrientation(o);
+    sensed_wavefront.setDirection(o);
+}
+
+void Camera::setSize(double s)
+{
+    size = s;
+    sensed_wavefront.setSize(s);
+}

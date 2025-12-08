@@ -24,9 +24,12 @@ public:
     double hit(const ray &beamlet) override;
     void interact_ray(ray &beamlet) override;
     void interact_wavefront(WaveFront &A) override;
+    void reset() override;
+    void setPosition(vec3 pos) override;
+    void setOrientation(vec3 o) override;
+    void setSize(double s);
 
     WaveFront &getSensedWaveFront();
-    void reset();
 };
 
 #endif

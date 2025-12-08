@@ -6,12 +6,7 @@
     ]
   },
   "ExpandedNodes": [
-    "",
-    "\\extern",
-    "\\extern\\ImGui\\examples\\example_allegro5",
-    "\\include",
-    "\\src"
+    ""
   ],
-  "SelectedNode": "\\CMakeLists.txt",
   "PreviewInSolutionExplorer": false
 }

@@ -1,0 +1,129 @@
+This is a great step. To make your tool feel like a professional optical CAD suite (like Zemax or Lumerical), you need a 
+set of icons.Here is a comprehensive list of standard elements used in Quantum Optics and Imaging setups, grouped by category, along with suggestions on what their icons usually look like.
+
+1. Sources (The Input)
+
+    This is where everything starts.
+
+    Laser / Coherent Source:
+
+        Icon: A stylized diode box with a straight beam coming out, or a "radiation hazard" symbol.
+        Use: Standard interferometry, holography.
+    
+    SPDC Crystal (Non-Linear Crystal):
+    
+        Icon: A diamond or a hexagonal prism with one beam entering and two distinct beams (Signal & Idler) exiting in a "V" shape.
+        Use: The heart of quantum imaging. Generates entangled photon pairs (BBO, KTP crystals).
+    
+    Single Photon Source:
+    
+        Icon: A small dot or atom emitting a single squiggly line (photon).
+        Use: Quantum key distribution, fundamental tests.
+        
+2. Beam Steering & Routing
+    
+    How you move light around the table.
+    
+    Mirror:
+        
+        Icon: A thick diagonal line (often with "hashing" on the back side to indicate the non-reflective surface).
+        Use: Turning the beam 90 degrees.
+    
+    Beam Splitter (BS):
+    
+        Icon: A cube or square with a faint diagonal line through it.
+        Use: Splitting amplitude 50/50. Crucial for Mach-Zehnder interferometers.
+    
+    Polarizing Beam Splitter (PBS):
+    
+        Icon: Similar to a BS, but usually shaded differently (e.g., half grey) or with a double-arrow indicating polarization separation.
+        Use: Splitting Horizontal and Vertical polarization.
+
+3. Beam Shaping & Imaging
+
+    The "Imaging" part of your project.
+    
+    Lens:
+        
+        Icon: A simple bi-convex shape (looks like an eye or an almond).
+        Use: Focusing light, Fourier Transforms (2f systems), Image formation (4f systems).
+    
+    Spatial Light Modulator (SLM) / DMD:
+        
+        Icon: A grid or matrix pattern (resembling a pixelated screen).
+        Use: Creating holograms, structured light, or turbulence simulation. Essential for Ghost Imaging.
+    
+    Aperture / Iris:
+        
+        Icon: A circle with an opening in the middle, or two vertical bars blocking the edges of a beam.
+        Use: Filtering spatial modes, creating diffraction patterns.
+    
+4. Polarization Control
+
+    Critical for quantum information.
+    
+    Half-Wave Plate (HWP):
+        
+        Icon: A circle with a single straight line through the center (indicating the fast axis).
+        Use: Rotating polarization direction.
+    
+    Quarter-Wave Plate (QWP):
+        
+        Icon: A circle with a specific symbol (like $\lambda/4$) inside.
+        Use: Converting Linear $\leftrightarrow$ Circular polarization.
+
+5. Detection (The Output)
+    
+    Camera (CCD/CMOS):
+        
+        Icon: A square grid (representing pixels) or a classic camera sensor silhouette.
+        Use: Measuring intensity profiles, interference patterns.
+        
+    Bucket Detector (Single Pixel):
+        
+        Icon: A simple photodiode symbol (a triangle hitting a flat line) or a "bucket" shape.
+        Use: Ghost imaging (collects all light into one value).
+    
+    Coincidence Counter:
+        
+        Icon: A box with an & symbol or a stopwatch.
+        Use: Logic unit that only clicks when both detectors fire simultaneously (essential for verifying entanglement).
+
+
+WaveFront &WaveFront::operator+=(const WaveFront &other)
+{
+    const double k = 2.0 * PI / other.wavelength;
+
+    vec3 this_center = this->normal.pos();
+    vec3 this_normal = this->w;
+    vec3 other_center = other.normal.pos();
+    vec3 other_normal = other.w;
+
+    double denominator = dot(other_normal, this_normal);
+
+    for (int i = 0; i < other.N; i++)
+    {
+        for (int j = 0; j < other.N; j++)
+        {
+            vec3 SourcePixelPosition = other_center + (i - other.N / 2.0) * other.pixel_size * other.u + (j - other.N / 2.0) * other.pixel_size * other.v;
+            double DistanceToThisPlane = 0.0;
+            if (std::abs(denominator) >= 1e-6)
+                DistanceToThisPlane = dot(this_center - SourcePixelPosition, this_normal) / denominator;
+            SourcePixelPosition += DistanceToThisPlane * other_normal;
+
+            int iThis = (int)(dot(SourcePixelPosition - this_center, this->u) / this->pixel_size + this->N / 2.0);
+            int jThis = (int)(dot(SourcePixelPosition - this_center, this->v) / this->pixel_size + this->N / 2.0);
+
+            if (iThis >= 0 && iThis < this->N && jThis >= 0 && jThis < this->N)
+            {
+                std::complex<double> PhaseFactor = std::polar(1.0, k * DistanceToThisPlane);
+                this->Ex[iThis][jThis] += other.Ex[i][j] * PhaseFactor;
+                this->Ey[iThis][jThis] += other.Ey[i][j] * PhaseFactor;
+            }
+        }
+    }
+
+    std::cout << "[Wavefront] : Wavefront added" << std::endl;
+
+    return *this;
+}

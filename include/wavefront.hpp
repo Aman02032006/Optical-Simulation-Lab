@@ -26,7 +26,7 @@ private:
 public:
     std::vector<std::vector<std::complex<double>>> Ex; // Grid of Amplitudes
     std::vector<std::vector<std::complex<double>>> Ey; // Grid of Polarizations
-    vec3 u, v;                                         // Local frame for the wavefront plane
+    vec3 u, v, w;                                      // Local frame for the wavefront plane
     int N;                                             // The Ex and Ey will be a N x N grid
 
     WaveFront(ray normal, double wavelength, FieldType source, double psi, double delta, double w0, int l = 0, int p = 0, double size = 0.02, double pixel_size = 0.02 / 1024);
@@ -45,6 +45,16 @@ public:
     std::vector<std::vector<double>> Intensity() const; // returns an intensity map of the wavefront
     std::vector<std::vector<double>> Phase() const;     // returns a phase map of the wavefront
 
+    void setPosition(vec3 pos);
+    void setDirection(vec3 dir);
+    void setSize(double s);
+    void setPixelSize(double px);
+    void setWavelength(double w);
+    void setFieldType(FieldType type);
+    void setPsi(double theta);
+    void setDelta(double theta);
+    void setBeamWaist(double w);
+    void setBeamMode(int L, int P);
     void initialize(); // Initializes the Electric Field Grids according to the FieldType
 
     WaveFront operator+(const WaveFront &other);
