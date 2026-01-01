@@ -258,7 +258,7 @@ int main()
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 0);
     glfwWindowHint(GLFW_MAXIMIZED, GLFW_TRUE);
 
-    GLFWwindow *window = glfwCreateWindow(WINDOW_WIDTH, WINDOW_HEIGHT, "QISS - Optical Workbench", NULL, NULL);
+    GLFWwindow *window = glfwCreateWindow(WINDOW_WIDTH, WINDOW_HEIGHT, "Optical Simulation Lab", NULL, NULL);
     if (!window)
         return 1;
 

@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.15)
-project(QISS VERSION 0.1 LANGUAGES CXX)
+project(OpticalSimulationLab VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -7,26 +7,26 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # -----------------------------
 # 1. Collect your project sources
 # -----------------------------
-file(GLOB_RECURSE QISS_SOURCES src/*.cpp)
+file(GLOB_RECURSE OpticalSimulationLab_SOURCES src/*.cpp)
 
-add_executable(QISS ${QISS_SOURCES})
+add_executable(OpticalSimulationLab ${OpticalSimulationLab_SOURCES})
 
 # -----------------------------
 # 2. Include directories
 # -----------------------------
 # Your headers
-target_include_directories(QISS PRIVATE include)
+target_include_directories(OpticalSimulationLab PRIVATE include)
 
 # FFTW headers
 set(FFTW_ROOT "${PROJECT_SOURCE_DIR}/extern/FFTW")
 set(FFTW_INCLUDE_DIR "${FFTW_ROOT}/include")
-target_include_directories(QISS PRIVATE ${FFTW_INCLUDE_DIR})
+target_include_directories(OpticalSimulationLab PRIVATE ${FFTW_INCLUDE_DIR})
 
 # ImGui + ImPlot headers
-target_include_directories(QISS PRIVATE extern/ImGui extern/ImPlot)
+target_include_directories(OpticalSimulationLab PRIVATE extern/ImGui extern/ImPlot)
 
 # Include directories for the ImGui backend headers
-target_include_directories(QISS PRIVATE
+target_include_directories(OpticalSimulationLab PRIVATE
     ${CMAKE_SOURCE_DIR}/extern/ImGui/backends
 )
 
@@ -50,7 +50,7 @@ set(IMGUI_BACKENDS
 )
 
 # Add all external sources to your executable
-target_sources(QISS PRIVATE 
+target_sources(OpticalSimulationLab PRIVATE 
     ${IMGUI_SOURCES} 
     ${IMPLOT_SOURCES}
     ${IMGUI_BACKENDS}
@@ -93,7 +93,7 @@ link_directories(${FFTW_LIB_DIR}) # Lets target_link_libraries find fftw3
 # -----------------------------
 # 5. Link All Libraries
 # -----------------------------
-target_link_libraries(QISS PRIVATE 
+target_link_libraries(OpticalSimulationLab PRIVATE 
     # Matplot++ (handles its own dependencies)
     matplot
 
@@ -112,7 +112,7 @@ target_link_libraries(QISS PRIVATE
 # -----------------------------
 # 6. Optional compile definitions
 # -----------------------------
-target_compile_definitions(QISS PRIVATE 
+target_compile_definitions(OpticalSimulationLab PRIVATE 
     _CRT_SECURE_NO_WARNINGS
     "ImDrawIdx=unsigned int"
 )
@@ -121,22 +121,22 @@ target_compile_definitions(QISS PRIVATE
 # 7. Post-Build Commands
 # -----------------------------
 # Copy runtime DLLs
-add_custom_command(TARGET QISS POST_BUILD
+add_custom_command(TARGET OpticalSimulationLab POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_if_different
         ${FFTW_LIB_DIR}/libfftw3-3.dll
-        $<TARGET_FILE_DIR:QISS>
+        $<TARGET_FILE_DIR:OpticalSimulationLab>
 )
 
 # -----------------------------
 # 8. Asset Management
 # -----------------------------
-add_custom_command(TARGET QISS PRE_BUILD
-    COMMAND ${CMAKE_COMMAND} -E make_directory $<TARGET_FILE_DIR:QISS>/icons
+add_custom_command(TARGET OpticalSimulationLab PRE_BUILD
+    COMMAND ${CMAKE_COMMAND} -E make_directory $<TARGET_FILE_DIR:OpticalSimulationLab>/icons
 )
 
 # Copy all files from project_root/icons to build_dir/icons
-add_custom_command(TARGET QISS POST_BUILD
+add_custom_command(TARGET OpticalSimulationLab POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_directory
     ${CMAKE_SOURCE_DIR}/icons
-    $<TARGET_FILE_DIR:QISS>/icons
+    $<TARGET_FILE_DIR:OpticalSimulationLab>/icons
 )
