@@ -1,5 +1,5 @@
 #include "ray.hpp"
-#include <cmath> // for sqrt
+#include <cmath>
 
 ray::ray(point3 position, vec3 direction)
     : position{position}, direction{direction}, alive{true} {}

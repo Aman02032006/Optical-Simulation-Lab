@@ -1,9 +1,8 @@
-#include "WaveFront.hpp"
+#include "wavefront.hpp"
 #include "utils.hpp"
 #include <stdexcept>
 #include <cmath>
 
-// Constructor
 WaveFront::WaveFront(ray normal, double wavelength, FieldType source, double psi, double delta, double w0, int l, int p, double size, double pixel_size)
     : size(size), pixel_size(pixel_size), normal(normal), wavelength(wavelength), source(source), w0(w0), l(l), p(p), psi(psi), delta(delta)
 {
@@ -13,32 +12,23 @@ WaveFront::WaveFront(ray normal, double wavelength, FieldType source, double psi
     get_LocalFrame();
 }
 
-// Getters
 double WaveFront::getSize() { return size; }
 double WaveFront::getPixelSize() { return pixel_size; }
 double WaveFront::getWavelength() { return wavelength; }
 ray WaveFront::getNormal() { return normal; }
 
-// Local frame computation
 void WaveFront::get_LocalFrame()
 {
+    ;
     w = normal.dir();
-    vec3 temp = (std::abs(w.x()) < 0.9) ? vec3(1.0, 0.0, 0.0) : vec3(0.0, 1.0, 0.0);
-
-    u = unit_vector(cross(w, temp));
-    v = unit_vector(cross(w, u));
-
-    if (w.x() > 0.9)
-    {
-        temp = u;
-        u = v;
-        v = temp;
-    }
+    v = vec3(w.z(), 0.0, -w.x());
+    v = unit_vector(v);
+    u = cross(w, v);
 }
 
-// Fresnel propagation
 void WaveFront::propagate(double z)
 {
+    ;
     if (z == 0.0)
         return;
 
@@ -135,9 +125,9 @@ void WaveFront::propagate(double z)
     fftw_free(out);
 }
 
-// Phase shift
 void WaveFront::phaseShift(double phi)
 {
+    ;
     std::complex<double> ph = std::polar(1.0, phi);
     for (int i = 0; i < N; i++)
         for (int j = 0; j < N; j++)
@@ -147,9 +137,9 @@ void WaveFront::phaseShift(double phi)
         }
 }
 
-// Scaling
 void WaveFront::scale(double factor)
 {
+    ;
     for (int i = 0; i < N; i++)
         for (int j = 0; j < N; j++)
         {
@@ -158,7 +148,6 @@ void WaveFront::scale(double factor)
         }
 }
 
-// Intensity
 std::vector<std::vector<double>> WaveFront::Intensity() const
 {
     std::vector<std::vector<double>> intensity(N, std::vector<double>(N, 0.0));
@@ -184,18 +173,20 @@ void WaveFront::initialize()
 
     for (int i = 0; i < N; i++)
     {
-        double x = (i - N / 2) * pixel_size;
+        double y = (i - N / 2) * pixel_size;
         for (int j = 0; j < N; j++)
         {
-            double y = (j - N / 2) * pixel_size;
+            double x = (j - N / 2) * pixel_size;
             std::complex<double> comp_amp(0.0, 0.0);
             double norm = sqrt(2.0 / (PI * w0 * w0));
 
             switch (source)
             {
             case FieldType::PLANE:
+            {
                 comp_amp = std::polar(1.0, 0.0);
                 break;
+            }
 
             case FieldType::GAUSSIAN:
             {
@@ -230,6 +221,12 @@ void WaveFront::initialize()
                 double Hm = hermitePol(l, X);
                 double Hn = hermitePol(p, Y);
                 comp_amp = std::complex<double>(norm * Hm * Hn * exp(-(x * x + y * y) / (w0 * w0)), 0.0);
+                break;
+            }
+
+            case FieldType::BLANK:
+            {
+                comp_amp = std::complex<double>(0.0, 0.0);
                 break;
             }
             }
@@ -269,10 +266,6 @@ WaveFront &WaveFront::operator+=(const WaveFront &other)
 {
     const double k = 2.0 * PI / other.wavelength;
 
-    std::cout << "[Wavefront] : " << k << std::endl;
-    std::cout << "[Wavefront] : " << other.w << std::endl;
-    std::cout << "[Wavefront] : " << this->w << std::endl;
-
     vec3 this_center = this->normal.pos();
     vec3 this_normal = this->w;
     vec3 other_center = other.normal.pos();
@@ -284,14 +277,17 @@ WaveFront &WaveFront::operator+=(const WaveFront &other)
     {
         for (int j = 0; j < other.N; j++)
         {
-            vec3 SourcePixelPosition = other_center + (i - other.N / 2.0) * other.pixel_size * other.u + (j - other.N / 2.0) * other.pixel_size * other.v;
+            vec3 SourcePixelPosition = other_center + (other.N / 2.0 - i) * other.pixel_size * other.u + (other.N / 2.0 - j) * other.pixel_size * other.v;
             double DistanceToThisPlane = 0.0;
             if (std::abs(denominator) >= 1e-6)
                 DistanceToThisPlane = dot(this_center - SourcePixelPosition, this_normal) / denominator;
             SourcePixelPosition += DistanceToThisPlane * other_normal;
 
-            int iThis = (int)(dot(SourcePixelPosition - this_center, this->u) / this->pixel_size + this->N / 2.0);
-            int jThis = (int)(dot(SourcePixelPosition - this_center, this->v) / this->pixel_size + this->N / 2.0);
+            auto iThisDouble = this->N / 2.0 - dot(SourcePixelPosition - this_center, this->u) / this->pixel_size;
+            auto jThisDouble = this->N / 2.0 - dot(SourcePixelPosition - this_center, this->v) / this->pixel_size;
+
+            int iThis = (int)iThisDouble;
+            int jThis = (int)jThisDouble;
 
             if (iThis >= 0 && iThis < this->N && jThis >= 0 && jThis < this->N)
             {
@@ -301,8 +297,6 @@ WaveFront &WaveFront::operator+=(const WaveFront &other)
             }
         }
     }
-
-    std::cout << "[Wavefront] : Wavefront added" << std::endl;
 
     return *this;
 }
@@ -325,50 +319,10 @@ void WaveFront::reflect(vec3 n)
     get_LocalFrame();
 }
 
-void WaveFront::setPosition(vec3 pos)
-{
-    normal = ray(pos, normal.dir());
-}
-
 void WaveFront::setDirection(vec3 dir)
 {
     normal = ray(normal.pos(), dir);
     get_LocalFrame();
-}
-
-void WaveFront::setSize(double s)
-{
-    size = s;
-}
-
-void WaveFront::setPixelSize(double px)
-{
-    pixel_size = px;
-}
-
-void WaveFront::setWavelength(double w)
-{
-    wavelength = w;
-}
-
-void WaveFront::setFieldType(FieldType type)
-{
-    source = type;
-}
-
-void WaveFront::setPsi(double theta)
-{
-    psi = theta;
-}
-
-void WaveFront::setDelta(double theta)
-{
-    delta = theta;
-}
-
-void WaveFront::setBeamWaist(double w)
-{
-    w0 = w;
 }
 
 void WaveFront::setBeamMode(int L, int P)
@@ -376,3 +330,12 @@ void WaveFront::setBeamMode(int L, int P)
     l = L;
     p = P;
 }
+
+void WaveFront::setPosition(vec3 pos) { normal = ray(pos, normal.dir()); }
+void WaveFront::setSize(double s) { size = s; }
+void WaveFront::setPixelSize(double px) { pixel_size = px; }
+void WaveFront::setWavelength(double w) { wavelength = w; }
+void WaveFront::setFieldType(FieldType type) { source = type; }
+void WaveFront::setPsi(double theta) { psi = theta; }
+void WaveFront::setDelta(double theta) { delta = theta; }
+void WaveFront::setBeamWaist(double w) { w0 = w; }

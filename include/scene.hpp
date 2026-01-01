@@ -11,6 +11,8 @@
 #include "source.hpp"
 #include "camera.hpp"
 #include "mirror.hpp"
+#include "lens.hpp"
+#include "aperture.hpp"
 
 struct SceneObject
 {
@@ -64,6 +66,22 @@ public:
         else if (type == "Mirror")
         {
             obj->element = std::make_shared<Mirror>(position, orientation, obj->name);
+        }
+        else if (type == "ConvexLens")
+        {
+            obj->element = std::make_shared<ConvexLens>(position, orientation, obj->name, 0.02, 0.1, 1.5);
+        }
+        else if (type == "ConcaveLens")
+        {
+            obj->element = std::make_shared<ConcaveLens>(position, orientation, obj->name, 0.02, 0.1, 1.5);
+        }
+        else if (type == "Iris")
+        {
+            obj->element = std::make_shared<Iris>(position, orientation, obj->name, 0.01, 0.02);
+        }
+        else if (type == "Slit")
+        {
+            obj->element = std::make_shared<Slit>(position, orientation, obj->name, 0.02, 0.01, 1e-4, 1, 2e-4);
         }
 
         objects.push_back(obj);
@@ -126,7 +144,6 @@ public:
         }
     }
 
-    // Getter for the UI to loop over
     std::vector<std::shared_ptr<SceneObject>> &GetObjects() { return objects; }
 };
 

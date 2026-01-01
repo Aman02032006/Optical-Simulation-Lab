@@ -30,18 +30,13 @@ std::vector<OpticalElement *> SimulationEngine::Run(Scene &scene)
     std::vector<OpticalElement *> Elements = scene.GetSimulationElements();
 
     if (Sources.empty())
-    {
-        std::cout << "[Simulation] : No Source found in the scene." << std::endl;
         return scene.GetCameras();
-    }
-    else
-        std::cout << "[Simulation] : " << Sources.size() << " sources found in the scene." << std::endl;
 
     std::set<Path> PossiblePaths;
 
-    for (auto &Src : Sources)
+    for (auto Src : Sources)
     {
-        for (int i = 1; i <= 100; i++)
+        for (int i = 1; i <= 5; i++)
         {
             ray beam(Src->getPosition(), Src->getOrientation());
             std::set<OpticalElement *> interacted_with;
@@ -80,9 +75,8 @@ std::vector<OpticalElement *> SimulationEngine::Run(Scene &scene)
             PossiblePaths.insert(CurrentPath);
         }
     }
-    std::cout << "[Simulation] : Paths calculated" << std::endl;
 
-    for (auto &Src : Sources)
+    for (auto Src : Sources)
         Src->E.initialize();
 
     for (auto Path : PossiblePaths)
@@ -98,9 +92,6 @@ std::vector<OpticalElement *> SimulationEngine::Run(Scene &scene)
             }
         }
     }
-
-    std::cout << "[Simulation] : Paths Traversed" << std::endl;
-    std::cout << "[Simulation] : Simulation finished" << std::endl;
 
     return scene.GetCameras();
 }

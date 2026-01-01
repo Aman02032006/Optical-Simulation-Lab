@@ -11,7 +11,7 @@
 class WaveFront
 {
 private:
-    double size;       // Size of the Wavefront Grid (For example, 5 X 5 cm)
+    double size;       // Size of the Wavefront Grid
     double pixel_size; // Size of individual pixels
     double wavelength; // Wavelength of the Wavefront
     ray normal;        // Normal to the wavefront plane
@@ -55,7 +55,7 @@ public:
     void setDelta(double theta);
     void setBeamWaist(double w);
     void setBeamMode(int L, int P);
-    void initialize(); // Initializes the Electric Field Grids according to the FieldType
+    void initialize();      // Initializes the Electric Field Grids according to the FieldType
 
     WaveFront operator+(const WaveFront &other);
     WaveFront operator-(const WaveFront &other);

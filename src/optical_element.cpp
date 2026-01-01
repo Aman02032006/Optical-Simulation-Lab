@@ -23,11 +23,6 @@ std::string OpticalElement::getName() const
     return name;
 }
 
-void OpticalElement::printDetails() const
-{
-    std::cout << "Name : " << getName() << "\tPosition : (" << position.x() << ", " << position.y() << ", " << position.z() << ")\tOrientation : (" << orientation.x() << ", " << orientation.y() << ", " << orientation.z() << ")" << std::endl;
-}
-
 void OpticalElement::setPosition(vec3 pos)
 {
     position = pos;
@@ -42,16 +37,7 @@ void OpticalElement::setOrientation(vec3 o)
 void OpticalElement::init_local_frame()
 {
     w = orientation;
-
-    auto tmp = (abs(w.x()) < 0.9) ? vec3(1.0, 0.0, 0.0) : vec3(0.0, 1.0, 0.0);
-
-    u = unit_vector(cross(w, tmp));
-    v = unit_vector(cross(w, u));
-
-    if (abs(w.x()) > 0.9)
-    {
-        tmp = u;
-        u = v;
-        v = tmp;
-    }
+    v = vec3(w.z(), 0.0, -w.x());
+    v = unit_vector(v);
+    u = cross(w, v);
 }

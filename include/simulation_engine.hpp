@@ -17,8 +17,15 @@ private:
     {
         Source* source = nullptr;
         std::vector<OpticalElement *> Elements;
-        bool operator<(const Path &other) const noexcept { return Elements < other.Elements; }
-        bool operator==(const Path &other) const noexcept { return Elements == other.Elements; }
+        bool operator<(const Path &other) const noexcept 
+        { 
+            if (source != other.source) return source < other.source;
+            return Elements < other.Elements; 
+        }
+        bool operator==(const Path &other) const noexcept 
+        { 
+            return source == other.source && Elements == other.Elements; 
+        }
     };
 
     static std::vector<double> FlattenGrid(const std::vector<std::vector<double>> &grid, int N);

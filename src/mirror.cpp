@@ -1,11 +1,6 @@
 #include "mirror.hpp"
 
-Mirror::Mirror(const vec3 &position,
-               const vec3 &orientation,
-               const std::string name,
-               double size,
-               double reflectivity,
-               std::complex<double> refractive_index)
+Mirror::Mirror(const vec3 &position, const vec3 &orientation, const std::string name, double size, double reflectivity, std::complex<double> refractive_index)
     : OpticalElement(position, orientation, name),
       size(size),
       reflectivity(reflectivity),
@@ -14,7 +9,7 @@ Mirror::Mirror(const vec3 &position,
 double Mirror::hit(const ray &beamlet)
 {
     double denom = dot(beamlet.dir(), getOrientation());
-    if (std::abs(denom) < 1e-6)
+    if (fabs(denom) < 1e-6)
         return -999.0;
 
     double t = dot(getPosition() - beamlet.pos(), getOrientation()) / denom;
@@ -29,7 +24,7 @@ double Mirror::hit(const ray &beamlet)
     double y_local = dot(dist, u);
 
     double half_size = size / 2.0;
-    if (std::abs(x_local) > half_size || std::abs(y_local) > half_size)
+    if (fabs(x_local) > half_size || fabs(y_local) > half_size)
         return -999.0;
 
     return t;

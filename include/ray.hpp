@@ -21,6 +21,8 @@ public:
     void propagate(double distance);                   // Propagates the photon by distance
     void reflect(point3 normal);                       // Reflects the photon about the normal
     void refract(point3 normal, double n1, double n2); // Refracrs the photon about the normal according to the two refractive indices. Also takes care of TIR.
+    void setPosition(point3 newPos) { position = newPos; }
+    void setDirection(vec3 newDir) { direction = unit_vector(newDir); }
 
     void kill();
     bool isAlive();

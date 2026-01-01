@@ -1,5 +1,5 @@
-#ifndef OPTICAL_ELEMENT_H
-#define OPTICAL_ELEMENT_H
+#ifndef OPTICAL_ELEMENT_HPP
+#define OPTICAL_ELEMENT_HPP
 
 #pragma once
 
@@ -19,26 +19,18 @@ private:
 
 public:
     vec3 u, v, w; // Stores the 3 orthogonal vectors of the Local frame determined by the orientation
-    // Constructor
     OpticalElement(const vec3 &position, const vec3 &orientation, const std::string &name);
-
-    // Virtual Destructor
     virtual ~OpticalElement() = default;
 
-    // Getters
     vec3 getPosition() const;
     vec3 getOrientation() const;
     std::string getName() const;
-    void printDetails() const;
 
-    // Setters
     virtual void setPosition(vec3 pos);
     virtual void setOrientation(vec3 o);
 
-    // Local frame generator
     void init_local_frame();
 
-    // Abstract Methods
     virtual double hit(const ray &beamlet) = 0;
     virtual void interact_ray(ray &beamlet) = 0;
     virtual void interact_wavefront(WaveFront &A) = 0;
