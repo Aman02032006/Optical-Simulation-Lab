@@ -22,14 +22,14 @@ A real-time ray-wave hybrid physics engine that combines **Geometric Ray Tracing
 * **Real-Time UI:** Built with Dear ImGui. Adjustable element-specific parameters for all elements, sources, and sensors.
 * **2D Scene:** Fully navigable 2D environment.
 
-## 📸 Gallery
+## Gallery
 
 | Diffraction Grating | Focusing Lens |
 |:-------------------:|:-------------:|
 | ![Diffraction](assets/diffraction.png) | ![Lens](assets/lens.png) |
 | *Multi-slit interference pattern* | *Focusing through a convex lens* |
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 * **C++17** Compiler (MSVC, GCC, or Clang)
@@ -60,7 +60,7 @@ A real-time ray-wave hybrid physics engine that combines **Geometric Ray Tracing
 4.  **Run**
     The executable `OpticalSimulationLab.exe` will be generated in the `build/Release` (or `bin`) folder. Ensure `fftw3.dll` is in the same directory before running.
 
-## 🎮 Controls
+## Controls
 
 | Input | Action |
 | :--- | :--- |
@@ -68,7 +68,7 @@ A real-time ray-wave hybrid physics engine that combines **Geometric Ray Tracing
 | **Scroll** | Zoom In/Out |
 | **UI Panel** | Modify optical element parameters |
 
-## 📚 Physics Under the Hood
+## Physics Under the Hood
 
 This simulation solves the **Fresnel Diffraction Integral** using Fast Fourier Transforms (FFT).
 
@@ -76,7 +76,7 @@ This simulation solves the **Fresnel Diffraction Integral** using Fast Fourier T
 2.  **Propagation:** We use the Angular Spectrum Method or Fresnel Transfer Function to propagate the field from plane $z$ to $z + \Delta z$.
 3.  **Element Interaction:** Lenses apply a quadratic phase factor $e^{-i k r^2 / 2f}$, and apertures apply a binary amplitude mask.
 
-## 📦 Dependencies
+## Dependencies
 
 * [Dear ImGui](https://github.com/ocornut/imgui) - User Interface
 * [FFTW](http://www.fftw.org/) - Fast Fourier Transform Library
